@@ -5,7 +5,7 @@ import { classNames } from "src/utils/helper";
 const CommonStyles = `inline-flex items-center justify-center border border-transparent font-medium shadow-sm text-white capitalize tracking-wider text-center transition-all duration-300`;
 
 type TSize = "xs" | "sm" | "base" | "lg" | "xl";
-type TVariant = "primary" | "outline";
+type TVariant = "primary" | "outline" | "grey" | "gray";
 
 type Props = {
     size?: TSize;
@@ -14,6 +14,8 @@ type Props = {
     loading?: boolean;
     containerClassName?: string;
     fullWidth?: boolean;
+    iconLeft?: JSX.Element;
+    iconRight?: JSX.Element;
 } & ComponentProps<"button">;
 
 const Button = ({
@@ -24,6 +26,8 @@ const Button = ({
     // loading = false,
     containerClassName = "",
     fullWidth = false,
+    iconLeft,
+    iconRight,
     ...rest
 }: Props): JSX.Element => {
     return (
@@ -52,7 +56,9 @@ const Button = ({
                 }
                 {...rest}
             >
+                <span className="mr-[15px]">{iconLeft}</span>
                 {children}
+                <span className="ml-[15px]">{iconRight}</span>
                 {/* {loading && (
                     <span className="ml-3">
                         <Loader
@@ -66,7 +72,6 @@ const Button = ({
 };
 
 const getSizeStyles = (size: TSize) => {
-    console.log({ size });
     switch (size) {
         case "xs":
             return `px-[16px] py-[5px] text-[12px] leading-[20px] rounded`;
@@ -75,27 +80,28 @@ const getSizeStyles = (size: TSize) => {
         case "base":
             return `px-[22px] py-[8px] text-[16px] leading-[24px]`;
         case "lg":
-            return `px-4 py-2 text-base rounded-md shadow-sm`;
+            return `px-[24px] py-[10px] text-[16px] leading-[24px] rounded-md shadow-sm`;
         case "xl":
-            return `px-6 py-3 text-base rounded-md shadow-sm`;
+            return `px-[24px] py-[12px] text-[18px] leading-[24px] rounded-md shadow-sm`;
         default:
             return `px-6 py-3 text-base rounded-md shadow-sm`;
     }
 };
 
 const getVariantStyles = (variant: TVariant) => {
-    console.log({ variant });
     switch (variant) {
         case "primary":
-            return `bg-primary hover:bg-primaryLighter focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:focus:ring-primaryLighter rounded-[6px]`;
+            return `bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:focus:ring-primary rounded-[6px]`;
         // case "delete":
         //     return `bg-primary-red hover:bg-primary-red-darker focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500`;
         case "outline":
             return "bg-white hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary text-primary border border-primary shadow-sm rounded-[6px]";
-        // case "auth":
-        //     return `bg-primary hover:bg-primaryLighter focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:focus:ring-primaryLighter rounded-[24px]`;
+        case "grey":
+        case "gray":
+            return "bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mGray-0 hover:focus:ring-mGray-0 rounded-[px] text-mGray-1";
+
         default:
-            return `bg-primary hover:bg-primaryLighter focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`;
+            return `bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`;
     }
 };
 
