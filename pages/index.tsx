@@ -1,20 +1,20 @@
-import Divider from "@components/common/divider/Divider";
+import Divider from "@components/common/atoms/divider/Divider";
+import { Input } from "@components/common/atoms/input";
+import { GoogleButton } from "@components/common/molecules/google-button";
 import React from "react";
 
 const Home: React.FC = () => {
     return (
         <div>
-            {/* <Button
-                className="button__gmail"
-                variant="grey"
-                size="xl"
-                fullWidth
-                iconLeft={<Gmail />}
-                iconRight={<OpenNewTab className="-ml-[7px]" />}
-            >
-                Continue With Google
-            </Button> */}
             <Divider text="Divider" />
+            <Input
+                label={
+                    <p>
+                        Testing <span className="text-red-300">something</span>
+                    </p>
+                }
+            />
+            <GoogleButton brandType="gmail">Welcome</GoogleButton>
         </div>
     );
 };

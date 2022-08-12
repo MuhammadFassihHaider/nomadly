@@ -7,7 +7,7 @@ const CommonStyles = `inline-flex items-center justify-center border border-tran
 type TSize = "xs" | "sm" | "base" | "lg" | "xl";
 type TVariant = "primary" | "outline" | "grey" | "gray";
 
-type Props = {
+export type ButtonProps = {
     size?: TSize;
     variant?: TVariant;
     className?: string;
@@ -29,7 +29,7 @@ const Button = ({
     iconLeft,
     iconRight,
     ...rest
-}: Props): JSX.Element => {
+}: ButtonProps): JSX.Element => {
     return (
         <div
             className={classNames(

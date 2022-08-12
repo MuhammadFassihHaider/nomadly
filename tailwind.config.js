@@ -7,6 +7,7 @@ module.exports = {
                 primary: "#54499E",
                 "mGray-0": "#E0E4E9",
                 "mGray-1": "#535353",
+                "mGray-2": "#98A2B2",
                 gmail: "#EA4335",
                 lightBlue: "#BFD1FF",
             },
