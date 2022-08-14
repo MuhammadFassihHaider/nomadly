@@ -1,6 +1,6 @@
-import { Props } from "./Divider";
+import { DividerProps } from "./Divider";
 
-export const DividerLine = ({ color }: Pick<Props, "color">) => {
+export const DividerLine = ({ color }: Pick<DividerProps, "color">) => {
     return (
         <div
             className={`w-full h-[1px] ${

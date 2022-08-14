@@ -98,7 +98,7 @@ const getVariantStyles = (variant: TVariant) => {
             return "bg-white hover:opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary text-primary border border-primary shadow-sm rounded-[6px]";
         case "grey":
         case "gray":
-            return "bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mGray-0 hover:focus:ring-mGray-0 rounded-[px] text-mGray-1";
+            return "bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mGray-0 hover:focus:ring-mGray-0 rounded-[px] text-mGray-1 border border-mGray-0";
 
         default:
             return `bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`;

@@ -11,10 +11,12 @@ const GmailProps = {
     className: "button__gmail",
     iconLeft: <Gmail />,
     iconRight: <OpenNewTab className="-ml-[7px]" />,
+    children: "Open Gmail Inbox",
 };
 
 const GoogleProps = {
     iconLeft: <Google />,
+    children: "Continue with Google",
 };
 
 const GoogleButton = ({ brandType = "google", ...props }: Props) => {
