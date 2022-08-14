@@ -10,6 +10,7 @@ type Props = {
 
     inputProps?: ComponentProps<"input">;
     labelProps?: ComponentProps<"label">;
+    containerClassName?: string;
 };
 
 const Input = (props: Props) => {
@@ -17,7 +18,7 @@ const Input = (props: Props) => {
     delete props.labelProps?.children;
 
     return (
-        <div>
+        <div className={props.containerClassName}>
             {props?.label && (
                 <label
                     {...props.labelProps}

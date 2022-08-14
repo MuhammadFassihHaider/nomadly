@@ -19,7 +19,7 @@ export type ButtonProps = {
 } & ComponentProps<"button">;
 
 const Button = ({
-    size = "base",
+    size = "xl",
     variant = "primary",
     children,
     className = "",
