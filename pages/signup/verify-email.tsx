@@ -12,7 +12,11 @@ const SubHeading = (
 
 const VerifyEmail = () => {
     return (
-        <AuthTemplate heading="Verify your email" subHeading={SubHeading}>
+        <AuthTemplate
+            hasHeader
+            heading="Verify your email"
+            subHeading={SubHeading}
+        >
             <div className="mb-[156px]">
                 <GoogleButton
                     brandType="gmail"

@@ -13,13 +13,21 @@ export type THeadingAndSubHeading = string | JSX.Element;
 type AuthTemplateProps = PropsWithChildren<{
     heading: THeadingAndSubHeading;
     subHeading: THeadingAndSubHeading;
+    hasSidebar?: boolean;
+    hasHeader?: boolean;
 }>;
 
-const AuthTemplate = ({ heading, subHeading, children }: AuthTemplateProps) => {
+const AuthTemplate = ({
+    heading,
+    subHeading,
+    hasSidebar = false,
+    hasHeader = false,
+    children,
+}: AuthTemplateProps) => {
     return (
         <div className="flex">
-            <div className="pt-[24px] pl-[75px] pr-[30px] pb-[46px] flex-1">
-                <AuthHeader />
+            <div className="pt-[24px] pl-[75px] pr-[30px] pb-[46px] flex-1 h-[calc(100vh-46px)]">
+                {hasHeader && <AuthHeader />}
                 <div className="mx-auto max-w-[470px] flex flex-col justify-center h-[calc(100%-66px)] relative">
                     <AuthHeading text={heading} className="mb-[13px]" />
                     <AuthSubheading text={subHeading} className="mb-[26px]" />
@@ -32,7 +40,7 @@ const AuthTemplate = ({ heading, subHeading, children }: AuthTemplateProps) => {
                     </div>
                 </div>
             </div>
-            <AuthSidebar />
+            {hasSidebar && <AuthSidebar />}
         </div>
     );
 };
