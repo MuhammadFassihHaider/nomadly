@@ -7,8 +7,6 @@ import React from "react";
 const ResetPassword = () => {
     return (
         <AuthTemplate
-            hasHeader
-            hasSidebar
             heading="Reset Your Password"
             subHeading={
                 <p>

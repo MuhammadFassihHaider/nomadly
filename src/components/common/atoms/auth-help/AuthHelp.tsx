@@ -9,7 +9,7 @@ const AuthHelp = ({ className = "" }: Props) => {
     return (
         <p
             className={classNames(
-                "text-sm leading-6 tracking-[0.18px] text-mBlack text-center",
+                "text-sm leading-6 tracking-[0.18px] text-mBlack-0 text-center",
                 className,
             )}
         >

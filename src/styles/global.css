@@ -5,3 +5,7 @@
 .button__gmail {
     @apply border-gmail outline-gmail focus:hover:ring-2 focus:hover:ring-gmail
 }
+
+.transition {
+    @apply transition-all duration-100
+}

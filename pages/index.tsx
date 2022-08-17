@@ -8,8 +8,6 @@ import React from "react";
 const Home = () => {
     return (
         <AuthTemplate
-            hasHeader
-            hasSidebar
             heading="Welcome Back!"
             subHeading="If you have an account, please log in with your email address."
         >

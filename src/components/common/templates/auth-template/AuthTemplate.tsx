@@ -1,12 +1,14 @@
 import { Divider } from "@components/common/atoms/divider";
 import { GoogleButton } from "@components/common/molecules/google-button";
-import { AuthHeader } from "@components/common/templates/auth-template/auth-header";
-import { AuthSidebar } from "@components/common/templates/auth-template/auth-sidebar";
+import { AuthHeader } from "@components/common/organisms/auth-header";
+import { AuthSidebar } from "@components/common/organisms/auth-sidebar";
 import React, { PropsWithChildren } from "react";
-import { AuthHeading } from "./auth-heading";
-import { AuthHelp } from "./auth-help";
-import { AuthSubheading } from "./auth-subheading";
-import { AuthTOC } from "./auth-toc";
+import { classNames } from "src/utils/helper";
+import { AuthHeading } from "../../atoms/auth-heading";
+import { AuthHelp } from "../../atoms/auth-help";
+import { AuthSubheading } from "../../atoms/auth-subheading";
+import { AuthTOC } from "../../atoms/auth-toc";
+import { PagePaddingsTemplate } from "../page-paddings-template";
 
 export type THeadingAndSubHeading = string | JSX.Element;
 
@@ -14,32 +16,34 @@ type AuthTemplateProps = PropsWithChildren<{
     heading: THeadingAndSubHeading;
     subHeading: THeadingAndSubHeading;
     hasSidebar?: boolean;
-    hasHeader?: boolean;
 }>;
 
 const AuthTemplate = ({
     heading,
     subHeading,
-    hasSidebar = false,
-    hasHeader = false,
+    hasSidebar = true,
     children,
 }: AuthTemplateProps) => {
     return (
         <div className="flex">
-            <div className="pt-[24px] pl-[75px] pr-[30px] pb-[46px] flex-1 h-[calc(100vh-46px)]">
-                {hasHeader && <AuthHeader />}
-                <div className="mx-auto max-w-[470px] flex flex-col justify-center h-[calc(100%-66px)] relative">
+            <PagePaddingsTemplate>
+                <AuthHeader />
+                <div
+                    className={classNames(
+                        "mx-auto flex flex-col justify-center h-[100%] relative max-w-[470px]",
+                    )}
+                >
                     <AuthHeading text={heading} className="mb-[13px]" />
                     <AuthSubheading text={subHeading} className="mb-[26px]" />
                     <div className="flex flex-col justify-center">
                         {children}
                     </div>
-                    <div className="absolute bottom-0">
+                    <div>
                         <AuthHelp className="mb-[31px]" />
                         <AuthTOC />
                     </div>
                 </div>
-            </div>
+            </PagePaddingsTemplate>
             {hasSidebar && <AuthSidebar />}
         </div>
     );

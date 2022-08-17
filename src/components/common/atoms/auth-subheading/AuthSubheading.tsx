@@ -1,16 +1,17 @@
+import React from "react";
 import { classNames } from "src/utils/helper";
-import { THeadingAndSubHeading } from "../AuthTemplate";
+import { THeadingAndSubHeading } from "../../templates/auth-template/AuthTemplate";
 
 type Props = {
     text: THeadingAndSubHeading;
     className?: string;
 };
 
-const AuthHeading = ({ text, className = "" }: Props) => {
+const AuthSubheading = ({ text, className = "" }: Props) => {
     return (
         <p
             className={classNames(
-                "text-[34px] leading-[32px] text-mBlack text-center",
+                "text-sm leading-[22px] text-mGray-3 text-center",
                 className,
             )}
         >
@@ -19,4 +20,4 @@ const AuthHeading = ({ text, className = "" }: Props) => {
     );
 };
 
-export default AuthHeading;
+export default AuthSubheading;

@@ -4,7 +4,7 @@ export const DividerLine = ({ color }: Pick<DividerProps, "color">) => {
     return (
         <div
             className={`w-full h-[1px] ${
-                color ? `bg-[${color}]` : `bg-lightBlue`
+                color ? `bg-[${color}]` : `bg-mLightBlue`
             }`}
         />
     );

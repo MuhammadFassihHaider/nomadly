@@ -10,7 +10,7 @@ const VerifyEmailIconWithLabel = ({ icon, label }: Props) => {
     return (
         <div className="flex items-center">
             {icon}
-            <p className="ml-[6px] text-xs leading-4 text-mBlack tracking-[0.18px]">
+            <p className="ml-[6px] text-xs leading-4 text-mBlack-0 tracking-[0.18px]">
                 {label}
             </p>
         </div>

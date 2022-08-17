@@ -83,7 +83,7 @@ const Label = ({ label, size, position }: TLabelProps) => {
         <label
             className={classNames(
                 SwitchConfig[size].labelClassName,
-                "text-mBlack",
+                "text-mBlack-0",
                 position === "left" ? "mr-4" : "ml-4",
             )}
         >

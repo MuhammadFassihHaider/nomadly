@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentProps } from "react";
 import { classNames } from "src/utils/helper";
 
-const CommonStyles = `inline-flex items-center justify-center border border-transparent font-medium shadow-sm text-white capitalize tracking-wider text-center transition-all duration-300`;
+const CommonStyles = `inline-flex items-center justify-center border border-transparent font-medium shadow-sm capitalize tracking-wider text-center transition-all duration-300`;
 
 type TSize = "xs" | "sm" | "base" | "lg" | "xl";
 type TVariant = "primary" | "outline" | "grey" | "gray";
@@ -91,7 +91,7 @@ const getSizeStyles = (size: TSize) => {
 const getVariantStyles = (variant: TVariant) => {
     switch (variant) {
         case "primary":
-            return `bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:focus:ring-primary rounded-[6px]`;
+            return `bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:focus:ring-primary rounded-[6px] text-white`;
         // case "delete":
         //     return `bg-primary-red hover:bg-primary-red-darker focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500`;
         case "outline":

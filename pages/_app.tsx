@@ -6,7 +6,7 @@ import { Hydrate } from "react-query/hydration";
 import { Provider } from "react-redux";
 import store from "@redux/store";
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+function MyApp({ Component, pageProps }: any): JSX.Element {
     const queryClient = new QueryClient();
     return (
         <QueryClientProvider client={queryClient}>

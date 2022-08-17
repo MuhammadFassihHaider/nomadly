@@ -13,7 +13,7 @@ export const DividerText = ({
                         "px-[16px] text-[14px] leading-[21px] min-w-max",
                         textColor === "gray"
                             ? "text-mGray-1"
-                            : "text-lightBlue",
+                            : "text-mLightBlue",
                     )}
                 >
                     {text}

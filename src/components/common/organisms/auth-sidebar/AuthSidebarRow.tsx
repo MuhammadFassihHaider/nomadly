@@ -1,4 +1,4 @@
-import { AuthSidebarCheck } from "@components/icons";
+import { Check } from "@components/icons";
 
 type RowProps = {
     heading: string;
@@ -10,14 +10,14 @@ const RowHeading = ({ heading }: Pick<RowProps, "heading">) => {
 };
 
 const RowContent = ({ content }: Pick<RowProps, "content">) => {
-    return <p className="text-lightBlue">{content}</p>;
+    return <p className="text-mLightBlue">{content}</p>;
 };
 
 export const AuthSidebarRow = ({ content, heading }: RowProps) => {
     return (
         <div className="flex mb-[66px]">
-            <div className="bg-lightBlue rounded-full w-[20px] h-[20px] flex justify-center items-center px-[4px] py-[6px]">
-                <AuthSidebarCheck />
+            <div className="bg-mLightBlue rounded-full w-[20px] h-[20px] flex justify-center items-center px-[4px] py-[6px]">
+                <Check />
             </div>
             <div className="ml-[15px]">
                 <RowHeading heading={heading} />

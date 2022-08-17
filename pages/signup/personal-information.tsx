@@ -7,8 +7,6 @@ import React from "react";
 const PersonalInformation = () => {
     return (
         <AuthTemplate
-            hasHeader
-            hasSidebar
             heading={"Start for Free Today"}
             subHeading="Access to all features. No credit card required."
         >

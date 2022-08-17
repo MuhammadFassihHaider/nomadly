@@ -1,3 +1,4 @@
+import { AuthLogo } from "@components/common/atoms/auth-logo";
 import { Button } from "@components/common/atoms/button";
 import { DarkModeButton } from "@components/common/atoms/dark-mode-button";
 import React from "react";
@@ -10,9 +11,7 @@ type Props = {
 const AuthHeader = ({ containerClassName = "" }: Props) => {
     return (
         <div className={classNames("flex justify-between", containerClassName)}>
-            <div className="text-[32px] leading-[22px] text-primary font-medium">
-                LOGO
-            </div>
+            <AuthLogo />
             <div className="flex">
                 <div className="flex items-center mr-[72px]">
                     <p className="text-sm leading-5 mGray-3 mr-[22px] cursor-pointer hover:underline">

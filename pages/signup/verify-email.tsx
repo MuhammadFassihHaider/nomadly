@@ -13,7 +13,7 @@ const SubHeading = (
 const VerifyEmail = () => {
     return (
         <AuthTemplate
-            hasHeader
+            hasSidebar={false}
             heading="Verify your email"
             subHeading={SubHeading}
         >
