@@ -14,12 +14,12 @@ const PricingCardHeader = ({
     isSelected,
 }: Props) => {
     return (
-        <div className="flex mb-[18px]">
+        <div className="flex mb-[18px] ">
             <PricingCardIconContainer
                 icon={<Pricing1 />}
                 isSelected={isSelected}
             />
-            <div className="ml-[18px]">
+            <div className="ml-[18px] max-w-[130px]">
                 <p
                     className={classNames(
                         "font-medium text-base leading-5 transition",

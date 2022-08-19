@@ -4,6 +4,7 @@ import { PricingCardDescription } from "./pricing-card-description";
 import { PricingCardFeatures } from "./pricing-card-features";
 import { PricingCardHeader } from "./pricing-card-header";
 import { PricingCardPrice } from "./pricing-card-price";
+import { PricingCardTag } from "./pricing-card-tag";
 
 export type TPricing = TPricings["pricings"][0];
 type Props = TPricing & {
@@ -23,7 +24,7 @@ const PricingCard = ({
         <div
             onClick={() => onClickCard(id)}
             className={classNames(
-                "w-[394px] h-[660px] rounded-3xl shadow-lg px-[43px] py-[32px] cursor-pointer",
+                "w-[394px] h-[660px] rounded-3xl shadow-lg px-[43px] py-[32px] cursor-pointer relative",
                 id === 1 ? "-mt-[50px]" : "",
                 isSelected ? "bg-primary" : "bg-white",
             )}
@@ -43,6 +44,7 @@ const PricingCard = ({
                 isSelected={isSelected}
             />
             <PricingCardFeatures features={features} isSelected={isSelected} />
+            <PricingCardTag isSelected={isSelected} />
         </div>
     );
 };
