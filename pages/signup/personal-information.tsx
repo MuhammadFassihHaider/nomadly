@@ -1,3 +1,4 @@
+import { Button } from "@components/common/atoms/button";
 import { Divider } from "@components/common/atoms/divider";
 import { Input } from "@components/common/atoms/input";
 import { GoogleButton } from "@components/common/molecules/google-button";
@@ -10,15 +11,18 @@ const PersonalInformation = () => {
             heading={"Start for Free Today"}
             subHeading="Access to all features. No credit card required."
         >
-            <div className="mb-[68px]">
+            <div className="mb-[41px]">
                 <GoogleButton brandType="google" className="mb-[44px]" />
                 <Divider text="Or" containerClassName="mb-[44px]" />
                 <div className="grid grid-cols-2 gap-[30px] mb-[32px]">
                     <Input label={"First Name"} />
                     <Input label={"Last Name"} />
                 </div>
-                <Input label={"Email"} className="mb-[41px]" />
+                <Input label={"Email"} />
             </div>
+            <Button fullWidth containerClassName="mb-[70px]">
+                Sign Up
+            </Button>
         </AuthTemplate>
     );
 };

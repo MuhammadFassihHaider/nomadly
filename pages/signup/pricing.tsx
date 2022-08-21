@@ -21,7 +21,7 @@ const Pricing = ({ pricings }: PricingProps) => {
     }, []);
 
     return (
-        <PagePaddingsTemplate>
+        <PagePaddingsTemplate top="small">
             <AuthLogo isCenter className="mb-[28px]" />
             <AuthHeading
                 text={"Simple, transparent pricing"}

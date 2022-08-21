@@ -1,12 +1,12 @@
 import { Divider } from "@components/common/atoms/divider";
-import { Check } from "@components/icons";
-import React from "react";
 import { SidebarData } from "../../../../data/auth-sidebar-content";
+import { AuthSidebarPositionedItems } from "./auth-sidebar-positioned-items";
 import { AuthSidebarRow } from "./AuthSidebarRow";
 
 const AuthSidebar = () => {
     return (
-        <div className="rounded-l-[60px] bg-primary pt-[91px] h-full min-h-screen w-[486px] text-base leading-6">
+        <div className="rounded-l-[60px] bg-primary pt-[91px] h-full min-h-screen w-[486px] text-base leading-6 relative">
+            <AuthSidebarPositionedItems />
             <div className="pl-[61px] pr-[77px]">
                 {SidebarData.map((data) => (
                     <AuthSidebarRow

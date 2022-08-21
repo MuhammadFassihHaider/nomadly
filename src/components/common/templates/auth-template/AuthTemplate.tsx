@@ -23,7 +23,7 @@ const AuthTemplate = ({
 }: AuthTemplateProps) => {
     return (
         <div className="flex">
-            <PagePaddingsTemplate>
+            <PagePaddingsTemplate top="small">
                 <AuthHeader />
                 <div
                     className={classNames(
