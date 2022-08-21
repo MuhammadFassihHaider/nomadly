@@ -2,11 +2,17 @@ import { classNames } from "src/utils/helper";
 
 type Props = {
     selected?: boolean;
+    containerClassName?: string;
 };
 
-const Radio = ({ selected = false }: Props) => {
+const Radio = ({ selected = false, containerClassName }: Props) => {
     return (
-        <div className="flex items-center text-sm">
+        <div
+            className={classNames(
+                "flex items-center text-sm",
+                containerClassName,
+            )}
+        >
             <span
                 className={classNames(
                     selected

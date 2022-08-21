@@ -1,4 +1,4 @@
-export const pricings = [
+export const Pricings = [
     {
         id: 0,
         header: {

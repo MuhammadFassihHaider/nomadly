@@ -2,17 +2,15 @@ import { AuthHeading } from "@components/common/atoms/auth-heading";
 import { AuthLogo } from "@components/common/atoms/auth-logo";
 import { AuthSubheading } from "@components/common/atoms/auth-subheading";
 import { Switch } from "@components/common/atoms/switch";
-import { AuthTemplate } from "@components/common/templates/auth-template";
 import { PagePaddingsTemplate } from "@components/common/templates/page-paddings-template";
-import { PricingCard } from "@components/pages/pricing/pricing-card";
 import { PricingCardContainer } from "@components/pages/pricing/pricing-card-container";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import React, { useCallback, useState } from "react";
-import { pricings } from "../../src/data/pricings";
+import { useCallback, useState } from "react";
+import { Pricings } from "../../src/data/pricings";
 
 export type PricingProps = InferGetStaticPropsType<typeof getStaticProps>;
 type TReturnGetStaticProps = {
-    pricings: typeof pricings;
+    pricings: typeof Pricings;
 };
 
 const Pricing = ({ pricings }: PricingProps) => {
@@ -61,7 +59,7 @@ const Pricing = ({ pricings }: PricingProps) => {
 export const getStaticProps: GetStaticProps<TReturnGetStaticProps> = () => {
     return {
         props: {
-            pricings,
+            pricings: Pricings,
         },
     };
 };
