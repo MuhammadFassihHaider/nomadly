@@ -82,7 +82,7 @@ const getSizeStyles = (size: TSize) => {
         case "lg":
             return `px-[24px] py-[10px] text-[16px] leading-[24px] rounded-md shadow-sm`;
         case "xl":
-            return `px-[24px] py-[12px] text-[18px] leading-[24px] rounded-md shadow-sm`;
+            return `px-[24px] py-[15px] text-[18px] leading-[24px] rounded-md shadow-sm`;
         default:
             return `px-6 py-3 text-base rounded-md shadow-sm`;
     }

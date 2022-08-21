@@ -1,17 +1,17 @@
 import React, { ComponentProps } from "react";
 import { classNames } from "src/utils/helper";
+import type { TLabelProps } from "../label/Label";
+import { Label } from "../label";
 
 type Props = {
-    // not part of labelProps because this is something that will be use very frequently.
-    label?: string | JSX.Element;
-
-    // input className seperate for same reason as label
     className?: string;
 
     inputProps?: ComponentProps<"input">;
-    labelProps?: ComponentProps<"label">;
+
     containerClassName?: string;
-};
+
+    icon?: JSX.Element;
+} & TLabelProps;
 
 const Input = (props: Props) => {
     delete props.inputProps?.className;
@@ -20,20 +20,21 @@ const Input = (props: Props) => {
     return (
         <div className={props.containerClassName}>
             {props?.label && (
-                <label
-                    {...props.labelProps}
-                    className="mb-[1px] text-sm leading-[21px] text-mGray-2"
-                >
-                    {props.label}
-                </label>
+                <Label label={props.label} {...props.labelProps} />
             )}
-            <input
-                {...props.inputProps}
-                className={classNames(
-                    "rounded-md bg-white outline-none border border-mGray-0 w-full p-[14px]",
-                    props.className ?? "",
-                )}
-            />
+            <div className="relative">
+                <div className="absolute left-[13px] top-[18px] flex items-center">
+                    {!!props.icon && props.icon}
+                </div>
+                <input
+                    {...props.inputProps}
+                    className={classNames(
+                        "rounded-md bg-white outline-none border border-mGray-0 w-full p-[16px]",
+                        props.className,
+                        props.icon && "pl-[50px]",
+                    )}
+                />
+            </div>
         </div>
     );
 };
