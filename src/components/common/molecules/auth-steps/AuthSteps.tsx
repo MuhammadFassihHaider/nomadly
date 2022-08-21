@@ -7,7 +7,7 @@ type Props = {
     containerClassName?: string;
 };
 
-const SignupSteps = ({ step, containerClassName }: Props) => {
+const AuthSteps = ({ step, containerClassName }: Props) => {
     return (
         <div
             className={classNames(
@@ -27,4 +27,4 @@ const SignupSteps = ({ step, containerClassName }: Props) => {
     );
 };
 
-export default SignupSteps;
+export default AuthSteps;
