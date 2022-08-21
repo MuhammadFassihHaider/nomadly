@@ -1,13 +1,10 @@
-import { Divider } from "@components/common/atoms/divider";
-import { GoogleButton } from "@components/common/molecules/google-button";
+import { AuthFooter } from "@components/common/organisms/auth-footer";
 import { AuthHeader } from "@components/common/organisms/auth-header";
 import { AuthSidebar } from "@components/common/organisms/auth-sidebar";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { classNames } from "src/utils/helper";
 import { AuthHeading } from "../../atoms/auth-heading";
-import { AuthHelp } from "../../atoms/auth-help";
 import { AuthSubheading } from "../../atoms/auth-subheading";
-import { AuthTOC } from "../../atoms/auth-toc";
 import { PagePaddingsTemplate } from "../page-paddings-template";
 
 export type THeadingAndSubHeading = string | JSX.Element;
@@ -38,10 +35,7 @@ const AuthTemplate = ({
                     <div className="flex flex-col justify-center">
                         {children}
                     </div>
-                    <div>
-                        <AuthHelp className="mb-[31px]" />
-                        <AuthTOC />
-                    </div>
+                    <AuthFooter />
                 </div>
             </PagePaddingsTemplate>
             {hasSidebar && <AuthSidebar />}
