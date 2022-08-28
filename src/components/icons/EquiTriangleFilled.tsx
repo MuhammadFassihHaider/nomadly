@@ -9,7 +9,7 @@ const EquiTriangleFilled = (props: ComponentProps<"svg">) => {
             xmlns="http://www.w3.org/2000/svg"
             {...props}
         >
-            <path d="M4.5 5 8.397.5H.603L4.5 5Z" fill="#827A9C" />
+            <path d="M4.5 5 8.397.5H.603L4.5 5Z" />
         </svg>
     );
 };

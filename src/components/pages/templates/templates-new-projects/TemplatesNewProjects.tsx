@@ -1,7 +1,5 @@
 import { CardsContainerTemplate } from "@components/common/templates/cards-container-template";
-import { SimpleCardTemplate } from "@components/common/templates/simple-card-template";
 import { DraftPage, Pencil } from "@components/icons";
-import React from "react";
 import { TemplatesNewProject } from "./templates-new-project";
 
 const TemplatesNewProjects = () => {

@@ -3,7 +3,7 @@ import { AuthOptions } from "@components/common/organisms/auth-options";
 import { AuthContentCenterTemplate } from "@components/common/templates/auth-content-center-template";
 import { SkipRole } from "@components/pages/role/skip-role";
 import { GetStaticProps, InferGetStaticPropsType } from "next/types";
-import { RolesOptions } from "src/data/roles";
+import { RolesOptions } from "src/data/pages/roles";
 
 const NAME = "Some Name";
 

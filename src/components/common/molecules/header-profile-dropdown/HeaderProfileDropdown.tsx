@@ -1,6 +1,5 @@
 import { DownArrow } from "@components/icons";
 import { Menu } from "@headlessui/react";
-import React from "react";
 
 type Props = {
     name: string;

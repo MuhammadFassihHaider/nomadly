@@ -1,5 +1,5 @@
 import { SimpleCard } from "@components/common/molecules/simple-card";
-import { TTemplateCard } from "src/data/common/dashboard";
+import { TTemplateCard } from "src/data/common/templates";
 
 type Props = {
     cards: TTemplateCard[];

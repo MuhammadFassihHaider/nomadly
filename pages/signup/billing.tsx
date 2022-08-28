@@ -1,8 +1,6 @@
 import { AuthHeading } from "@components/common/atoms/auth-heading";
-import { Logo } from "@components/common/atoms/logo";
 import { AuthSubheading } from "@components/common/atoms/auth-subheading";
-import { Dropdown } from "@components/common/atoms/dropdown";
-import { Radio } from "@components/common/atoms/radio";
+import { Logo } from "@components/common/atoms/logo";
 import { AuthSteps } from "@components/common/molecules/auth-steps";
 import { PagePaddingsTemplate } from "@components/common/templates/page-paddings-template";
 import { BillingAlreadyUser } from "@components/pages/billing/billing-already-user";

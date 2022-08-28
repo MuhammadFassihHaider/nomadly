@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { classNames } from "src/utils/helper";
 import { Switch as Switch_ } from "@headlessui/react";
+import { classNames } from "src/utils/helper";
 
 type TSize = "base" | "lg";
 

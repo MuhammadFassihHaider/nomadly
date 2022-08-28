@@ -6,7 +6,7 @@ import { PagePaddingsTemplate } from "@components/common/templates/page-paddings
 import { PricingCardContainer } from "@components/pages/pricing/pricing-card-container";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useCallback, useState } from "react";
-import { Pricings } from "../../src/data/pricings";
+import { Pricings } from "src/data/pages/pricings";
 
 export type PricingProps = InferGetStaticPropsType<typeof getStaticProps>;
 type TReturnGetStaticProps = {
