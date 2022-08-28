@@ -28,7 +28,7 @@ const SidebarItem = ({ icon: Icon, label, isSelected, isLogout }: Props) => {
                 className={classNames(
                     "font-medium leading-[24px]",
                     isSelected && !isLogout && "text-white px-[24px]",
-                    !isSelected && !isLogout && "text-[#87888C] px-[12px]",
+                    !isSelected && !isLogout && "text-mGray-9 px-[12px]",
                     isLogout && "font-semibold text-primary",
                 )}
             >

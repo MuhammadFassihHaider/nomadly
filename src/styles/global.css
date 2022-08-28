@@ -29,6 +29,7 @@
 
 .page-template-layout__content {
     grid-area: content;
+    padding-bottom: 50px;
 }
 
 .simple-link {

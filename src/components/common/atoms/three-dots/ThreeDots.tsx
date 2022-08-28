@@ -6,7 +6,7 @@ const ThreeDots = () => {
             {[1, 2, 3].map((item) => (
                 <span
                     key={item}
-                    className="bg-[#D9D9D9] rounded-full w-[5px] h-[5px]"
+                    className="bg-mGray-10 rounded-full w-[5px] h-[5px]"
                 ></span>
             ))}
         </div>

@@ -28,3 +28,8 @@ export { default as EquiTriangleFilled } from "./EquiTriangleFilled";
 export { default as FilterFunnel } from "./FilterFunnel";
 export { default as Grid } from "./Grid";
 export { default as UpdownEquiTriangles } from "./UpdownEquiTriangles";
+export { default as DraftPage } from "./DraftPage";
+export { default as Facebook } from "./Facebook";
+export { default as Pencil } from "./Pencil";
+export { default as QuestionMark } from "./QuestionMark";
+export { default as ArrowRight } from "./ArrowRight";
