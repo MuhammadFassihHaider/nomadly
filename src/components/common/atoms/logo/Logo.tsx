@@ -6,7 +6,7 @@ type Props = {
     className?: string;
 };
 
-const AuthLogo = ({ isCenter = false, className = "" }: Props) => {
+const Logo = ({ isCenter = false, className = "" }: Props) => {
     return (
         <div
             className={classNames(
@@ -20,4 +20,4 @@ const AuthLogo = ({ isCenter = false, className = "" }: Props) => {
     );
 };
 
-export default AuthLogo;
+export default Logo;

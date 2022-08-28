@@ -1,11 +1,32 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .button__gmail {
-    @apply border-gmail outline-gmail focus:hover:ring-2 focus:hover:ring-gmail
+    @apply border-gmail outline-gmail focus:hover:ring-2 focus:hover:ring-gmail;
 }
 
 .transition {
-    @apply transition-all duration-100
+    @apply transition-all duration-100;
+}
+
+.page-template-layout {
+    display: grid;
+    grid-template-columns: 233px 1fr;
+    grid-template-rows: 72px 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar content";
+}
+
+.page-template-layout__sidebar {
+    grid-area: sidebar;
+}
+
+.page-template-layout__header {
+    grid-area: header;
+}
+
+.page-template-layout__content {
+    grid-area: content;
 }

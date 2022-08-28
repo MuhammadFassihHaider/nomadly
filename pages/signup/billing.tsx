@@ -1,5 +1,5 @@
 import { AuthHeading } from "@components/common/atoms/auth-heading";
-import { AuthLogo } from "@components/common/atoms/auth-logo";
+import { Logo } from "@components/common/atoms/logo";
 import { AuthSubheading } from "@components/common/atoms/auth-subheading";
 import { Dropdown } from "@components/common/atoms/dropdown";
 import { Radio } from "@components/common/atoms/radio";
@@ -15,7 +15,7 @@ const Billing = () => {
         <PagePaddingsTemplate>
             <main className="flex space-x-[94px] justify-center">
                 <section className="flex flex-col">
-                    <AuthLogo isCenter className="mb-[47px]" />
+                    <Logo isCenter className="mb-[47px]" />
                     <AuthSteps step={1} containerClassName="mb-[41px]" />
                     <AuthHeading
                         text={"Start Your 14 Day Free Trial"}

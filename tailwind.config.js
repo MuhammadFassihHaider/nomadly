@@ -13,6 +13,7 @@ module.exports = {
                 "mGray-4": "#7C889B",
                 "mGray-5": "#6F6C90",
                 "mGray-6": "#F3F3F3",
+                "mGray-7": "#C8CDD6",
                 gmail: "#EA4335",
                 mLightBlue: "#BFD1FF",
                 "mBlack-0": "#101625",

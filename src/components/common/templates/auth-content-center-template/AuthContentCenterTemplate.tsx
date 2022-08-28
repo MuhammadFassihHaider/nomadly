@@ -1,5 +1,5 @@
 import { AuthHeading } from "@components/common/atoms/auth-heading";
-import { AuthLogo } from "@components/common/atoms/auth-logo";
+import { Logo } from "@components/common/atoms/logo";
 import { AuthSubheading } from "@components/common/atoms/auth-subheading";
 import AuthSteps, {
     TAuthStep,
@@ -22,7 +22,7 @@ const AuthContentCenterTemplate = ({
     return (
         <PagePaddingsTemplate>
             <main className="max-w-[522px] mx-auto">
-                <AuthLogo isCenter className="mb-[47px]" />
+                <Logo isCenter className="mb-[47px]" />
                 {step !== undefined && (
                     <AuthSteps step={step} containerClassName="mb-[41px]" />
                 )}

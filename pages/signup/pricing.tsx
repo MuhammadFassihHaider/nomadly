@@ -1,5 +1,5 @@
 import { AuthHeading } from "@components/common/atoms/auth-heading";
-import { AuthLogo } from "@components/common/atoms/auth-logo";
+import { Logo } from "@components/common/atoms/logo";
 import { AuthSubheading } from "@components/common/atoms/auth-subheading";
 import { Switch } from "@components/common/atoms/switch";
 import { PagePaddingsTemplate } from "@components/common/templates/page-paddings-template";
@@ -22,7 +22,7 @@ const Pricing = ({ pricings }: PricingProps) => {
 
     return (
         <PagePaddingsTemplate top="small">
-            <AuthLogo isCenter className="mb-[28px]" />
+            <Logo isCenter className="mb-[28px]" />
             <AuthHeading
                 text={"Simple, transparent pricing"}
                 className="mb-[18px]"

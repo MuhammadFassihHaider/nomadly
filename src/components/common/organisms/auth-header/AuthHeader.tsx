@@ -1,4 +1,4 @@
-import { AuthLogo } from "@components/common/atoms/auth-logo";
+import { Logo } from "@components/common/atoms/logo";
 import { Button } from "@components/common/atoms/button";
 import { DarkModeButton } from "@components/common/atoms/dark-mode-button";
 import { useRouter } from "next/router";
@@ -13,7 +13,7 @@ const AuthHeader = ({ containerClassName = "" }: Props) => {
     const router = useRouter();
     return (
         <div className={classNames("flex justify-between", containerClassName)}>
-            <AuthLogo />
+            <Logo />
             <div className="flex">
                 <div className="flex items-center mr-[72px]">
                     <p className="text-sm leading-5 mGray-3 mr-[22px] cursor-pointer hover:underline">
