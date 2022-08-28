@@ -3,7 +3,7 @@ import { Sidebar } from "@components/common/organisms/sidebar";
 import React from "react";
 
 type Props = {
-    children: React.ReactChild;
+    children: React.ReactNode;
 };
 
 const ProtectedRoutesTemplate = ({ children }: Props) => {

@@ -5,7 +5,7 @@ type Props = {
     cards: TTemplateCard[];
 };
 
-const DashboardTemplatesCards = ({ cards }: Props) => {
+const TemplateCards = ({ cards }: Props) => {
     return (
         <>
             {cards.map((card) => (
@@ -21,4 +21,4 @@ const DashboardTemplatesCards = ({ cards }: Props) => {
     );
 };
 
-export default DashboardTemplatesCards;
+export default TemplateCards;

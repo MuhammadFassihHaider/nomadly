@@ -34,3 +34,10 @@
 .simple-link {
     @apply text-primary cursor-pointer hover:underline;
 }
+
+.dashboard-filter-button {
+    @apply border border-mGray-7 shadow-sm flex justify-center items-center bg-white cursor-pointer;
+
+    border-radius: 4px;
+    padding: 12px 13px;
+}

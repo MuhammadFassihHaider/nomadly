@@ -23,3 +23,8 @@ export { default as Plus } from "./Plus";
 export { default as Robot } from "./Robot";
 export { default as Instagram } from "./Instagram";
 export { default as Twitter } from "./Twitter";
+export { default as AddFolder } from "./AddFolder";
+export { default as EquiTriangleFilled } from "./EquiTriangleFilled";
+export { default as FilterFunnel } from "./FilterFunnel";
+export { default as Grid } from "./Grid";
+export { default as UpdownEquiTriangles } from "./UpdownEquiTriangles";

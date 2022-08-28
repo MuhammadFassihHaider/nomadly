@@ -1,16 +1,16 @@
-import { TemplatesCardHeader } from "@components/common/molecules/templates-card-header";
+import { TemplateCardHeader } from "@components/common/molecules/template-card-header";
 import { CardsContainerTemplate } from "@components/common/templates/cards-container-template";
 import { DASHBOARD_CARDS } from "src/data/pages/dashboard";
 import { DashboardCreateNewTemplate } from "./dashboard-create-new-template";
-import { DashboardTemplatesCards } from "./dashboard-templates-cards";
+import { TemplateCards } from "../../../common/molecules/template-cards";
 
 const DashboardTemplates = () => {
     return (
-        <CardsContainerTemplate>
-            <TemplatesCardHeader hasViewAll />
+        <CardsContainerTemplate className="mb-[24px]">
+            <TemplateCardHeader hasViewAll />
             <div className="grid grid-cols-[repeat(auto-fill,max(264px))] gap-[12px]">
                 <DashboardCreateNewTemplate />
-                <DashboardTemplatesCards cards={DASHBOARD_CARDS} />
+                <TemplateCards cards={DASHBOARD_CARDS} />
             </div>
         </CardsContainerTemplate>
     );

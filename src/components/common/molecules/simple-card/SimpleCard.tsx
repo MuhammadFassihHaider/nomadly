@@ -23,7 +23,7 @@ const SimpleCard = ({
             {isPopular && <PopularLabel />}
             <Icon className="mb-[10px]" />
             <h3 className="text-mBlack-0 mb-[12px]">{heading}</h3>
-            <p className="text-[#6D7787]">{description}</p>
+            <p className="text-mGray-8">{description}</p>
         </SimpleCardTemplate>
     );
 };

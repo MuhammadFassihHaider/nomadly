@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React from "react";
 
-export type TemplatesCardHeaderProps = {
+export type TemplateCardHeaderProps = {
     hasViewAll?: boolean;
 };
 
-const TemplatesCardHeader = ({
+const TemplateCardHeader = ({
     hasViewAll = false,
-}: TemplatesCardHeaderProps) => {
+}: TemplateCardHeaderProps) => {
     return (
         <div className="flex items-center justify-between mb-[18px]">
             <h2>Templates</h2>
@@ -20,4 +20,4 @@ const TemplatesCardHeader = ({
     );
 };
 
-export default TemplatesCardHeader;
+export default TemplateCardHeader;
