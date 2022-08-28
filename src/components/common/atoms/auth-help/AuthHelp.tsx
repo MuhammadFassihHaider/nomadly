@@ -13,15 +13,9 @@ const AuthHelp = ({ className = "" }: Props) => {
                 className,
             )}
         >
-            Need help?{" "}
-            <a className="text-primary cursor-pointer hover:underline px-0.5">
-                Click here
-            </a>{" "}
-            or email us at: <br />
-            <a
-                href={`mailto:support@logo.com`}
-                className="text-primary cursor-pointer hover:underline px-0.5"
-            >
+            Need help? <a className="simple-link px-0.5">Click here</a> or email
+            us at: <br />
+            <a href={`mailto:support@logo.com`} className="simple-link px-0.5">
                 support@logo.com
             </a>
         </p>

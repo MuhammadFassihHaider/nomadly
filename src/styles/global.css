@@ -30,3 +30,7 @@
 .page-template-layout__content {
     grid-area: content;
 }
+
+.simple-link {
+    @apply text-primary cursor-pointer hover:underline;
+}

@@ -19,3 +19,7 @@ export { default as SidebarProjects } from "./SidebarProjects";
 export { default as SidebarSettings } from "./SidebarSettings";
 export { default as SidebarTemplates } from "./SidebarTemplates";
 export { default as SidebarLogout } from "./SidebarLogout";
+export { default as Plus } from "./Plus";
+export { default as Robot } from "./Robot";
+export { default as Instagram } from "./Instagram";
+export { default as Twitter } from "./Twitter";

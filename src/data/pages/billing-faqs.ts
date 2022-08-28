@@ -1,4 +1,4 @@
-export const BillingFAQs = [
+export const BILLING_FAQS = [
     "Do you have a money back guarantee?",
     "Do I pay anything today?",
     "I'm not very tech savvy, is this for me?",

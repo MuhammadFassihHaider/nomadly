@@ -2,7 +2,7 @@ import { Logo } from "@components/common/atoms/logo";
 import { SidebarItem } from "@components/common/molecules/sidebar-item";
 import { SidebarLogout } from "@components/icons";
 import React from "react";
-import { SIDEBAR_ITEMS } from "src/data/sidebar-items";
+import { SIDEBAR_ITEMS } from "src/data/common/sidebar-items";
 
 const Sidebar = () => {
     return (
