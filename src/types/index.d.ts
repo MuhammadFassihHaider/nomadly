@@ -11,3 +11,5 @@ type TSidebarItem = {
     icon: ({ isSelected }: { isSelected?: boolean }) => JSX.Element;
     route: string;
 };
+
+type TSetState<T> = React.Dispatch<React.SetStateAction<T>>;

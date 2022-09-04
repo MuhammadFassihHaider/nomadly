@@ -26,7 +26,7 @@ const HeaderProfileDropdown = ({ name, image }: Props) => {
                     }
                 >
                     <Menu.Item>
-                        {({ active }) => (
+                        {() => (
                             <p className="text-sm cursor-pointer text-mBlack-0">
                                 Profile
                             </p>

@@ -33,3 +33,8 @@ export { default as Facebook } from "./Facebook";
 export { default as Pencil } from "./Pencil";
 export { default as QuestionMark } from "./QuestionMark";
 export { default as ArrowRight } from "./ArrowRight";
+export { default as Grabbable } from "./Grabbable";
+export { default as PlusFilled } from "./PlusFilled";
+export { default as PlusOutline } from "./PlusOutline";
+export { default as RefreshDouble } from "./RefreshDouble";
+export { default as NoteDown } from "./NoteDown";

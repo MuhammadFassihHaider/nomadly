@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentProps } from "react";
 import { classNames } from "src/utils/helper";
 
-const CommonStyles = `inline-flex items-center justify-center border border-transparent font-medium shadow-sm capitalize tracking-wider text-center transition-all duration-300`;
+const CommonStyles = `inline-flex items-center justify-center border border-transparent font-medium shadow-sm capitalize tracking-wider text-center transition-all duration-300 min-w-max`;
 
 type TSize = "xs" | "sm" | "base" | "lg" | "xl";
 type TVariant = "primary" | "outline" | "grey" | "gray";

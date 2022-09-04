@@ -16,11 +16,12 @@ const AuthHeader = ({ containerClassName = "" }: Props) => {
             <Logo />
             <div className="flex">
                 <div className="flex items-center mr-[72px]">
-                    <p className="text-sm leading-5 mGray-3 mr-[22px] cursor-pointer hover:underline">
+                    <p className="text-sm leading-5 text-mGray-3 mr-[22px] cursor-pointer hover:underline min-w-max">
                         Don't have an account?
                     </p>
                     <Button
                         variant="outline"
+                        size="lg"
                         onClick={() =>
                             router.push("/signup/personal-information")
                         }

@@ -10,7 +10,7 @@ const VerifyEmailIconContainer = () => {
                 label="Send a new code"
             />
             <VerifyEmailIconWithLabel
-                icon={<Cross />}
+                icon={<Cross className="fill-mBlack-0" />}
                 label="Try a different email"
             />
         </div>

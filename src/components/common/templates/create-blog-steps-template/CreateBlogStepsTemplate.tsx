@@ -31,7 +31,7 @@ const CreateBlogStepsTemplate = ({
             />
 
             <div className="mb-[23px] flex items-start justify-between">
-                <div className="max-w-[677px] px-[33px] py-[28px] rounded-[10px] shadow-sm bg-white">
+                <div className="w-[677px] px-[33px] py-[28px] rounded-[10px] shadow-sm bg-white">
                     {children}
                 </div>
 
@@ -45,10 +45,27 @@ const CreateBlogStepsTemplate = ({
                         Go Back
                     </Button>
                 )}
-                <Button size="lg">Generate</Button>
+                <Button size="lg">
+                    {getPrimaryButtonLabel(router.query.step ?? "1")}
+                </Button>
             </div>
         </CardsContainerTemplate>
     );
+};
+
+const getPrimaryButtonLabel = (step: string | string[]) => {
+    switch (step) {
+        case "1":
+            return "Generate Outline";
+        case "2":
+            return "Generate Talking Points";
+        case "3":
+            return "Generate Content";
+        case "4":
+            return "Creat Blog Post";
+        default:
+            break;
+    }
 };
 
 export default CreateBlogStepsTemplate;
