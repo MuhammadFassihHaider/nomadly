@@ -10,7 +10,7 @@ const CardsContainerTemplate = ({ children, className }: Props) => {
     return (
         <div
             className={classNames(
-                "px-[22px] pt-[24px] pb-[32px] bg-[#F6F6F6] rounded-[10px]",
+                "px-[22px] pt-[24px] pb-[32px] bg-mGray-12 rounded-[10px]",
                 className,
             )}
         >

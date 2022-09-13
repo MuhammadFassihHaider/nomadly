@@ -13,7 +13,7 @@ const CreateBlogStep = ({ label, isOnStep = false, step }: Props) => {
     return (
         <div className={"flex flex-col items-center"}>
             <div
-                className="rounded-full flex w-[40px] h-[40px] items-center justify-center mb-[10px] bg-[#F6F6F6]"
+                className="rounded-full flex w-[40px] h-[40px] items-center justify-center mb-[10px] bg-mGray-12"
                 style={{
                     boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
                 }}

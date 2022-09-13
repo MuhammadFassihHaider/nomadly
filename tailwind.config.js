@@ -18,6 +18,7 @@ module.exports = {
                 "mGray-9": "#87888C",
                 "mGray-10": "#D9D9D9",
                 "mGray-11": "#BFBFBF",
+                "mGray-12": "#F6F6F6",
                 gmail: "#EA4335",
                 mLightBlue: "#BFD1FF",
                 "mBlack-0": "#101625",

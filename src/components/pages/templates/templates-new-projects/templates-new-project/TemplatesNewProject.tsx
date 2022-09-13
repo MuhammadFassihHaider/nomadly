@@ -27,7 +27,7 @@ const TemplatesNewProject = ({ description, heading, icon, iconBg }: Props) => {
             <p className="text-xs text-mGray-8 text-center mb-[24px]">
                 {description}
             </p>
-            <ArrowRight />
+            <ArrowRight className="w-[12px] h-[9px] fill-[#7D54C5]" />
         </SimpleCardTemplate>
     );
 };

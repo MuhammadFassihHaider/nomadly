@@ -1,41 +1,29 @@
-import React, { ComponentProps } from "react";
+import { ComponentProps } from "react";
 import { classNames } from "src/utils/helper";
-import type { TLabelProps } from "../label/Label";
-import { Label } from "../label";
+import { InputAndTextareaWrapper } from "../input-and-textarea-wrapper";
+import type { TInputAndTextareaWrapperProps } from "../input-and-textarea-wrapper";
 
-type Props = {
-    className?: string;
-
+export type TInputProps = {
     inputProps?: ComponentProps<"input">;
+} & TInputAndTextareaWrapperProps;
 
-    containerClassName?: string;
-
-    icon?: JSX.Element;
-} & TLabelProps;
-
-const Input = (props: Props) => {
+const Input = (props: TInputProps) => {
     delete props.inputProps?.className;
     delete props.labelProps?.children;
 
+    const { inputProps, className, ...rest } = props;
+
     return (
-        <div className={props.containerClassName}>
-            {props?.label && (
-                <Label label={props.label} {...props.labelProps} />
-            )}
-            <div className="relative">
-                <div className="absolute left-[13px] top-[18px] flex items-center">
-                    {!!props.icon && props.icon}
-                </div>
-                <input
-                    {...props.inputProps}
-                    className={classNames(
-                        "rounded-md bg-white outline-none border border-mGray-0 w-full p-[16px]",
-                        props.className,
-                        props.icon && "pl-[50px]",
-                    )}
-                />
-            </div>
-        </div>
+        <InputAndTextareaWrapper {...rest}>
+            <input
+                {...inputProps}
+                className={classNames(
+                    "rounded-md bg-white outline-none border border-mGray-0 w-full p-[16px]",
+                    className,
+                    rest.icon && "pl-[50px]",
+                )}
+            />
+        </InputAndTextareaWrapper>
     );
 };
 

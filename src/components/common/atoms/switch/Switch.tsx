@@ -1,14 +1,15 @@
-import { Switch as Switch_ } from "@headlessui/react";
+import { Switch as HeadlessSwitch } from "@headlessui/react";
 import { classNames } from "src/utils/helper";
 
-type TSize = "base" | "lg";
+type TSize = "sm" | "base" | "lg";
 
-type TSwitchProps = Parameters<typeof Switch_>[0];
+type TSwitchProps = Parameters<typeof HeadlessSwitch>[0];
 
 type Props = {
     leftLabel?: string;
     rightLabel?: string;
     size?: TSize;
+    containerClassName?: string;
 } & TSwitchProps;
 
 type TLabelProps = {
@@ -29,6 +30,12 @@ type TSwitchConfig = {
 };
 
 const SwitchConfig: TSwitchConfig = {
+    sm: {
+        switchClassName: "h-[13px] w-[29px]",
+        switchBallClassName: "h-[9px] w-[9.8px]",
+        labelClassName: "text-[10px]",
+        switchBallTransitionClassName: "translate-x-[15px]",
+    },
     base: {
         switchClassName: "h-6 w-11",
         switchBallClassName: "h-5 w-5",
@@ -46,11 +53,16 @@ const SwitchConfig: TSwitchConfig = {
 const Switch = ({ size = "base", ...props }: Props) => {
     delete props?.className;
     return (
-        <div className="flex items-center">
+        <div
+            className={classNames(
+                "flex items-center",
+                props.containerClassName,
+            )}
+        >
             {props.leftLabel && (
                 <Label label={props.leftLabel} size={size} position="left" />
             )}
-            <Switch_
+            <HeadlessSwitch
                 checked={props.checked}
                 onChange={props.onChange}
                 className={classNames(
@@ -69,7 +81,7 @@ const Switch = ({ size = "base", ...props }: Props) => {
                         "pointer-events-none inline-block rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200",
                     )}
                 />
-            </Switch_>
+            </HeadlessSwitch>
             {props.rightLabel && (
                 <Label label={props.rightLabel} size={size} position="right" />
             )}
