@@ -30,6 +30,7 @@ const Button = ({
     iconRight,
     ...rest
 }: ButtonProps): JSX.Element => {
+    console.log({ disabled: rest.disabled });
     return (
         <div
             className={classNames(

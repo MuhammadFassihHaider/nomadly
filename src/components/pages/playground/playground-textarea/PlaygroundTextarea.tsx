@@ -1,24 +1,19 @@
-import { TTextareaProps, Textarea } from "@components/common/atoms/textarea";
-import React from "react";
+import { Textarea, TTextareaProps } from "@components/common/atoms/textarea";
 import { PlaygroundFormNumberOfWords } from "../playground-form-number-of-words";
-import {
-    TPlaygroundTemplateInputLabelProps,
-    PlaygroundInputLabel,
-} from "../playground-input-label";
 
-type Props = {
-    textareaProps?: TTextareaProps;
-    labelProps: TPlaygroundTemplateInputLabelProps;
-};
+type Props = TTextareaProps;
 
-const PlaygroundTextarea = ({ labelProps, textareaProps }: Props) => {
+const PlaygroundTextarea = ({ textareaProps, ...rest }: Props) => {
     return (
-        <div className="flex flex-col space-y-[8px]">
+        <div className="flex flex-col space-y-[3px]">
             <Textarea
-                label={<PlaygroundInputLabel {...labelProps} />}
+                {...rest}
                 textareaProps={{ draggable: false, ...textareaProps }}
             />
-            <PlaygroundFormNumberOfWords numberOfWords={0} />
+            <PlaygroundFormNumberOfWords
+                numberOfWords={0}
+                errorMessage={rest.errorMessage}
+            />
         </div>
     );
 };

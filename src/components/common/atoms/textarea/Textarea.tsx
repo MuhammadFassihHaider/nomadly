@@ -13,14 +13,14 @@ const Textarea = (props: TTextareaProps) => {
     delete props.textareaProps?.className;
     delete props.labelProps?.children;
 
-    const { textareaProps, className, ...rest } = props;
+    const { textareaProps, ...rest } = props;
 
     return (
         <InputAndTextareaWrapper {...rest}>
             <textarea
                 className={classNames(
                     "rounded-md bg-white outline-none border border-mGray-0 w-full p-[16px] resize-none",
-                    className,
+                    textareaProps?.className,
                     rest.icon && "pl-[50px]",
                 )}
                 {...textareaProps}

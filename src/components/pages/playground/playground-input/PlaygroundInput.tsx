@@ -1,23 +1,22 @@
 import { Input, TInputProps } from "@components/common/atoms/input";
 import { PlaygroundFormNumberOfWords } from "../playground-form-number-of-words";
-import {
-    PlaygroundInputLabel,
-    TPlaygroundTemplateInputLabelProps,
-} from "../playground-input-label";
+import { PlaygroundInputLabel } from "../playground-input-label";
 
-type Props = {
-    inputProps?: TInputProps;
-    labelProps: TPlaygroundTemplateInputLabelProps;
-};
+type Props = TInputProps;
 
-const PlaygroundInput = ({ inputProps, labelProps }: Props) => {
+const PlaygroundInput = ({ inputProps, errorMessage, ...rest }: Props) => {
+    console.log({ errorMessage });
     return (
-        <div className="flex flex-col space-y-[8px]">
+        <div className="flex flex-col space-y-[3px]">
             <Input
-                {...inputProps}
-                label={<PlaygroundInputLabel {...labelProps} />}
+                {...rest}
+                inputProps={inputProps}
+                errorMessage={errorMessage}
             />
-            <PlaygroundFormNumberOfWords numberOfWords={0} />
+            <PlaygroundFormNumberOfWords
+                numberOfWords={0}
+                errorMessage={errorMessage}
+            />
         </div>
     );
 };
