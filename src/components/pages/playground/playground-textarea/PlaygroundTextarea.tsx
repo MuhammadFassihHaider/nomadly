@@ -13,7 +13,7 @@ type Props = {
 
 const PlaygroundTextarea = ({ labelProps, textareaProps }: Props) => {
     return (
-        <div className="flex flex-col space-y-[16px]">
+        <div className="flex flex-col space-y-[8px]">
             <Textarea
                 label={<PlaygroundInputLabel {...labelProps} />}
                 textareaProps={{ draggable: false, ...textareaProps }}

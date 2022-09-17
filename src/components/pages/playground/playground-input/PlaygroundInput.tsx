@@ -12,7 +12,7 @@ type Props = {
 
 const PlaygroundInput = ({ inputProps, labelProps }: Props) => {
     return (
-        <div className="flex flex-col space-y-[16px]">
+        <div className="flex flex-col space-y-[8px]">
             <Input
                 {...inputProps}
                 label={<PlaygroundInputLabel {...labelProps} />}

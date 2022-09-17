@@ -6,8 +6,8 @@ import { PlaygroundTextarea } from "../playground-textarea";
 
 const PlaygroundSidebar = () => {
     return (
-        <aside className="w-[340px] bg-mGray-12 p-[38px] min-h-[calc(100vh-60px)] h-full">
-            <div className="flex flex-col space-y-[24px]">
+        <aside className="w-[340px] bg-mGray-12 p-[38px] min-h-[calc(100vh-60px)] h-[calc(100vh-60px)] fixed left-0 top-[60px]">
+            <div className="flex flex-col space-y-[16px]">
                 <PlaygroundInput labelProps={{ label: "Title" }} />
                 <PlaygroundTextarea
                     labelProps={{ label: "Content description/brief" }}

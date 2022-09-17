@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 
-import counter from "@redux/slices/counter";
+import ui from "@redux/slices/ui-slice";
 
-const rootReducer = combineReducers({ counter });
+const rootReducer = combineReducers({ ui });
 
 export type RootState = ReturnType<typeof rootReducer>;
 

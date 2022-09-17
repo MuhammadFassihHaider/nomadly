@@ -1,3 +1,5 @@
+import { ContentState, convertFromHTML, EditorState } from "draft-js";
+
 export function classNames(...args: any) {
     const classes = [];
     const hasOwn = {}.hasOwnProperty;
@@ -39,3 +41,20 @@ export function createNnumberOfArray(lengthOfArray: number) {
         .fill("")
         .map((_, i) => i + 1);
 }
+
+export const convertContentToEditorState = (content?: string) => {
+    if (!content) return EditorState.createEmpty();
+
+    const blocksFromHTML = convertFromHTML(content.split("\n").join("<br />"));
+
+    const contentState = ContentState.createFromBlockArray(
+        blocksFromHTML.contentBlocks,
+        blocksFromHTML.entityMap,
+    );
+
+    return EditorState.createWithContent(contentState);
+};
+
+export const getEditorStateInPlainText = (editorState: EditorState) => {
+    return editorState.getCurrentContent().getPlainText();
+};
