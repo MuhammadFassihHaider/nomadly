@@ -1,35 +1,31 @@
 import { EditorState } from "draft-js";
-import { useEditorState } from "src/hooks/useEditorState";
 import dynamic from "next/dynamic";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
 const WYSIWYGEditor: any = dynamic(
     () => import("react-draft-wysiwyg").then((mod: any) => mod.Editor),
     { ssr: false },
 );
 
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-
 type Props = {
-    content?: string;
+    onChangeEditorState: (editorState: EditorState) => void
+    editorState: EditorState
 };
 
-const Editor = ({ content = "" }: Props) => {
-    const [editorState, setEditorStateOnChange] = useEditorState(content);
-
-    const onEditorStateChange = (editorState: EditorState) => {
-        setEditorStateOnChange(editorState);
-    };
-
+const Editor = ({ editorState, onChangeEditorState }: Props) => {
     if (typeof window === "undefined") {
-        return null; //return nothing on the server-side
+        //return nothing on the server-side
+        //needed for Next.js
+        return null;
     }
 
     return (
         <div>
             <WYSIWYGEditor
-                editorState={editorState}
+                editorState={ editorState }
                 wrapperClassName="min-h-[calc(100vh-60px)] shadow-sm h-full bg-white border-none"
                 editorClassName="px-4"
-                onEditorStateChange={onEditorStateChange}
+                onEditorStateChange={ onChangeEditorState }
             />
         </div>
     );

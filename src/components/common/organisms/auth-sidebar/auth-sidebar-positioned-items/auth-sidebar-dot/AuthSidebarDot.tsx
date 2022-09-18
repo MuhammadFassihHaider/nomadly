@@ -9,12 +9,12 @@ type Props = {
 const AuthSidebarDot = ({ background, position }: Props) => {
     return (
         <div
-            className={classNames(
+            className={ classNames(
                 "w-[12px] h-[12px] rounded-full absolute",
                 position,
                 background === "pink" ? "bg-[#FFB4C4]" : "bg-[#FFD167]",
-            )}
-        ></div>
+            ) }
+        />
     );
 };
 

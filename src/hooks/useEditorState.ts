@@ -1,35 +1,29 @@
-import { EditorState } from "draft-js";
-import { useCallback, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../redux/store";
-import {
-    setEditorStateFromStringContent,
-    setEditorStateOnChange,
-} from "../redux/slices/ui-slice";
+import { EditorState as TEditorState, EditorState } from "draft-js";
+import { useEffect, useState } from "react";
+import { convertContentToEditorState } from "../utils/helper";
 
 export const useEditorState = (
     content?: string,
-): [EditorState, (editorState: EditorState) => void] => {
-    const dispatch = useAppDispatch();
+): {
+    editorState: EditorState,
+    _setEditorStateOnChange: (editorState: EditorState) => void,
+    _setEditorStateFromString: (content: string) => void
+} => {
+    const [editorState, setEditorState] = useState<TEditorState>(EditorState.createEmpty());
 
-    const editorState = useAppSelector((state) => state.ui.editorState);
-
-    const _setEditorStateFromString = useCallback(
+    const _setEditorStateFromString =
         (content?: string) => {
-            dispatch(setEditorStateFromStringContent(content));
-        },
-        [dispatch],
-    );
+            setEditorState(convertContentToEditorState(content));
+        };
 
-    const _setEditorStateOnChange = useCallback(
+    const _setEditorStateOnChange =
         (editorState: EditorState) => {
-            dispatch(setEditorStateOnChange(editorState));
-        },
-        [dispatch],
-    );
+            setEditorState(editorState);
+        };
 
     useEffect(() => {
         _setEditorStateFromString(content);
-    }, [_setEditorStateFromString, content]);
+    }, [content]);
 
-    return [editorState, _setEditorStateOnChange];
+    return { editorState, _setEditorStateOnChange, _setEditorStateFromString };
 };

@@ -10,15 +10,16 @@ const HeaderProfileDropdown = ({ name, image }: Props) => {
     return (
         <div className="relative flex items-center ">
             <p className="font-medium text-sm leading-[17px] text-mBlack-0 mr-[15px] pl-[13px] border-l border-mGray-7">
-                {name}
+                { name }
             </p>
             <Menu>
-                <Menu.Button className={"flex items-center"}>
+                <Menu.Button className={ "flex items-center" }>
                     <img
-                        src={image ?? "https://via.placeholder.com/150"}
+                        src={ image ?? "https://via.placeholder.com/150" }
                         className="rounded-full w-[40px] h-[40px] mr-[9px]"
+                        alt={ "User profile" }
                     />
-                    <DownArrow className="fill-[#6D7787] w-[8px] h-[8px]" />
+                    <DownArrow className="fill-[#6D7787] w-[8px] h-[8px]"/>
                 </Menu.Button>
                 <Menu.Items
                     className={
@@ -26,14 +27,14 @@ const HeaderProfileDropdown = ({ name, image }: Props) => {
                     }
                 >
                     <Menu.Item>
-                        {() => (
+                        { () => (
                             <p className="text-sm cursor-pointer text-mBlack-0">
                                 Profile
                             </p>
-                        )}
+                        ) }
                     </Menu.Item>
                 </Menu.Items>
-            </Menu>{" "}
+            </Menu>{ " " }
         </div>
     );
 };
