@@ -11,20 +11,20 @@ import { getEditorStateInPlainText } from "../../src/utils/helper";
 const Playground = () => {
     const [dataFromApi, setDataFromApi] = useState("");
 
-    const {
-        editorState,
-        _setEditorStateOnChange,
-        _setEditorStateFromString,
-    } = useEditorState("");
+    const { editorState, _setEditorStateOnChange, _setEditorStateFromString } =
+        useEditorState("");
 
     const [
         composeForPlayground,
-        { data: dataComposeForPlayground, isLoading: isLoadingComposeForPlayground },
+        {
+            data: dataComposeForPlayground,
+            isLoading: isLoadingComposeForPlayground,
+        },
     ] = useComposeFromPlaygroundMutation();
 
     useEffect(() => {
         if (!isLoadingComposeForPlayground && !!dataComposeForPlayground) {
-            const dataFromApiInString = `${ dataFromApi } ${ dataComposeForPlayground }`;
+            const dataFromApiInString = `${dataFromApi} ${dataComposeForPlayground}`;
             setDataFromApi(dataFromApiInString);
             _setEditorStateFromString(dataFromApiInString);
         }
@@ -41,15 +41,17 @@ const Playground = () => {
 
     return (
         <div>
-            <PlaygroundHeader/>
+            <PlaygroundHeader />
             <div className="flex">
                 <PlaygroundSidebar
-                    onClickSubmitButton={ onClickSubmitButton }
-                    contentAlreadyGenerated={ dataFromApi }/>
+                    onClickSubmitButton={onClickSubmitButton}
+                    contentAlreadyGenerated={dataFromApi}
+                />
                 <main className="flex-1 ml-[340px] mt-[60px]">
                     <Editor
-                        editorState={ editorState }
-                        onChangeEditorState={ onChangeEditor }/>
+                        editorState={editorState}
+                        onChangeEditorState={onChangeEditor}
+                    />
                 </main>
             </div>
         </div>
