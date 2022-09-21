@@ -5,12 +5,17 @@ import {
     TComposeFromPlaygroundResponse,
 } from "@redux/api/playgroundApi/playgroundApi.types";
 
+
+const removeEmptyKeyValuePairs = (body: object) => {
+    return Object.fromEntries(Object.entries(body).filter(([_, v]) => v != ""));
+}
+
 const playgroundApi = api.injectEndpoints({
     endpoints: (builder) => ({
         composeFromPlayground: builder.mutation<string, Partial<TComposeFromPlaygroundOptional> & TComposeFromPlaygroundRequired>({
             invalidatesTags: ["Playground"],
             query: (body) => {
-                let _body = Object.fromEntries(Object.entries(body).filter(([_, v]) => v != ""));
+                let _body = removeEmptyKeyValuePairs(body);
                 return {
                     body: _body,
                     url: "long-form",
