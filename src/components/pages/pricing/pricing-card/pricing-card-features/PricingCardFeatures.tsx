@@ -1,6 +1,4 @@
-import { Button } from "@components/common/atoms/button";
 import { Check } from "@components/icons";
-import React from "react";
 import { classNames } from "src/utils/helper";
 import { TPricing } from "../PricingCard";
 
@@ -26,9 +24,6 @@ const PricingCardFeatures = ({ features, isSelected }: Props) => {
                     />
                 ))}
             </div>
-            <Button fullWidth variant={isSelected ? "outline" : "primary"}>
-                Get Started
-            </Button>
         </div>
     );
 };

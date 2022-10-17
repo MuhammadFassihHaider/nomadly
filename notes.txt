@@ -1,0 +1,7 @@
+remove welcome message with name in roles
+
+change the way we chose monthly / yearly subscription
+
+add toasts and error handling
+
+fix playground input src\components\pages\playground\playground-input\PlaygroundInput.tsx

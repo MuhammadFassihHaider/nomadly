@@ -7,6 +7,10 @@ import { PricingCardContainer } from "@components/pages/pricing/pricing-card-con
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useCallback, useState } from "react";
 import { Pricings } from "src/data/pages/pricings";
+import { useAppDispatch, useAppSelector } from "@redux/store";
+import { setBilling, setPlan } from "@redux/slices/business-slice";
+import { useRouter } from "next/router";
+import { TEBusinessPlan } from "@redux/api/authApi/authApi.types";
 
 export type PricingProps = InferGetStaticPropsType<typeof getStaticProps>;
 type TReturnGetStaticProps = {
@@ -14,11 +18,25 @@ type TReturnGetStaticProps = {
 };
 
 const Pricing = ({ pricings }: PricingProps) => {
-    const [selectedPricing, setSelectedPricing] = useState(-1);
+    const dispatch = useAppDispatch();
+    const router = useRouter();
 
-    const onClickPricingCard = useCallback((cardId: number) => {
-        setSelectedPricing(cardId);
+    const { billing, plan } = useAppSelector((state) => ({
+        billing: state.business.billing,
+        plan: state.business.plan,
+    }));
+
+    const onClickPricingCard = useCallback((plan: TEBusinessPlan) => {
+        dispatch(setPlan(plan));
     }, []);
+
+    const onChangeBillingType = () => {
+        dispatch(setBilling(billing === "MONTHLY" ? "YEARLY" : "MONTHLY"));
+    };
+
+    const onClickNextButton = () => {
+        router.push("/business/about-business");
+    };
 
     return (
         <PagePaddingsTemplate top="small">
@@ -35,10 +53,8 @@ const Pricing = ({ pricings }: PricingProps) => {
             <div className="mt-[35px]">
                 <div className="flex justify-center mb-[126px]">
                     <Switch
-                        checked
-                        onChange={() => {
-                            /**do nothing */
-                        }}
+                        checked={billing === "MONTHLY" ? false : true}
+                        onChange={onChangeBillingType}
                         leftLabel="Monthly"
                         rightLabel="Annually"
                         size="lg"
@@ -47,8 +63,9 @@ const Pricing = ({ pricings }: PricingProps) => {
                 {pricings && (
                     <PricingCardContainer
                         pricings={pricings}
-                        selectedPricing={selectedPricing}
+                        selectedPricing={plan}
                         onClickCard={onClickPricingCard}
+                        onClickNextButton={onClickNextButton}
                     />
                 )}
             </div>

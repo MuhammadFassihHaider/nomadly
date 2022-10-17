@@ -16,8 +16,32 @@ const getContentBeforeCursor = (str: string, cursorPosition: number) => {
     return str.substring(startIndex, cursorPosition);
 };
 
+export type TPlaygroundSidebarInputFields = Omit<
+    TComposeFromPlayground,
+    "output_length" | "content"
+>;
+
+export type TPlaygroundInputFieldsEnabled = {
+    [T in keyof TPlaygroundSidebarInputFields]: boolean;
+};
+
 const Playground = () => {
     const [dataFromApi, setDataFromApi] = useState("");
+
+    const [isInputEnabled, setIsInputEnabled] =
+        useState<TPlaygroundInputFieldsEnabled>({
+            audience: true,
+            description: true,
+            keywords: true,
+            title: true,
+            tone: true,
+        });
+
+    const onChangeInputFieldEnabledStatus = (
+        key: keyof TPlaygroundSidebarInputFields,
+    ) => {
+        setIsInputEnabled((value) => ({ ...value, [key]: !value[key] }));
+    };
 
     const [
         composeForPlayground,
@@ -57,7 +81,27 @@ const Playground = () => {
             cursorPosition,
         );
 
-        composeForPlayground({ ...getValues(), content: relevantContent });
+        const { output_length, ...filterableValues } = getValues();
+
+        Object.keys(filterableValues).forEach((key) => {
+            if (
+                !isInputEnabled[
+                    key as unknown as keyof TPlaygroundInputFieldsEnabled
+                ]
+            ) {
+                delete filterableValues[
+                    key as unknown as keyof TPlaygroundInputFieldsEnabled
+                ];
+            }
+        });
+
+        const valuesToSend = {
+            ...filterableValues,
+            output_length,
+            content: relevantContent,
+        };
+
+        composeForPlayground(valuesToSend);
     };
 
     const getDataMemo = useCallback(onClickSubmitButton, [
@@ -85,7 +129,7 @@ const Playground = () => {
             <PlaygroundHeader />
             <div className="flex">
                 <PlaygroundSidebar
-                    onClickSubmitButton={() => onClickSubmitButton()}
+                    onClickSubmitButton={onClickSubmitButton}
                     contentAlreadyGenerated={dataFromApi}
                     formState={formState}
                     getValues={getValues}
@@ -94,6 +138,10 @@ const Playground = () => {
                     reset={reset}
                     setValue={setValue}
                     watch={watch}
+                    isInputEnabled={isInputEnabled}
+                    onChangeInputFieldEnabledStatus={
+                        onChangeInputFieldEnabledStatus
+                    }
                 />
                 <main className="flex-1 ml-[340px] mt-[60px]">
                     <Editor

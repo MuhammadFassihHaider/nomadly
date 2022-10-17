@@ -42,3 +42,65 @@
     border-radius: 4px;
     padding: 12px 13px;
 }
+
+.rdw-dropdown-wrapper {
+    border: none !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+}
+
+.rdw-dropdown-wrapper:hover {
+    box-shadow: none !important;
+}
+
+.rdw-fontsize-wrapper {
+    border-right: 1px solid #c8c8c8;
+    padding-right: 21px;
+    margin-right: 30px;
+}
+
+.rdw-option-wrapper {
+    border: none !important;
+}
+
+.rdw-option-wrapper:hover {
+    box-shadow: none !important;
+}
+
+/* ================== Spinner ========================== */
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+    border: 5px solid #54499e;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #54499e transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

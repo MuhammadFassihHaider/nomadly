@@ -1,18 +1,21 @@
-import { PricingProps } from "pages/signup/pricing";
+import { TEBusinessPlan } from "@redux/api/authApi/authApi.types";
+import { PricingProps } from "pages/business/pricing";
 import React from "react";
 import { PricingCard } from "../pricing-card";
 
 export type TPricings = Pick<PricingProps, "pricings">;
 
 export type PricingCardProps = {
-    selectedPricing: number;
-    onClickCard: (id: number) => void;
+    selectedPricing: TEBusinessPlan;
+    onClickCard: (id: TEBusinessPlan) => void;
+    onClickNextButton: () => void;
 } & TPricings;
 
 const PricingCardContainer = ({
     pricings,
     selectedPricing,
     onClickCard,
+    onClickNextButton,
 }: PricingCardProps) => {
     return (
         <div className="flex gap-[30px] justify-center">
@@ -26,6 +29,7 @@ const PricingCardContainer = ({
                     description={description}
                     isSelected={selectedPricing === id}
                     onClickCard={onClickCard}
+                    onClickNextButton={onClickNextButton}
                 />
             ))}
         </div>

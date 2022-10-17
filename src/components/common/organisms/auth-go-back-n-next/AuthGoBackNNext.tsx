@@ -4,13 +4,16 @@ import React from "react";
 
 type Props = {
     buttonLabel: string;
+    onClick: () => void;
 };
 
-const AuthGoBackNNext = ({ buttonLabel }: Props) => {
+const AuthGoBackNNext = ({ buttonLabel, onClick }: Props) => {
     return (
         <div className="flex justify-between items-center mb-[73px]">
             <GoBack />
-            <Button className="w-[200px]">{buttonLabel}</Button>
+            <Button className="w-[200px]" onClick={onClick}>
+                {buttonLabel}
+            </Button>
         </div>
     );
 };

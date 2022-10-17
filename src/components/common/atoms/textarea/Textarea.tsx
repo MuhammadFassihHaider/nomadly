@@ -19,7 +19,7 @@ const Textarea = (props: TTextareaProps) => {
         <InputAndTextareaWrapper {...rest}>
             <textarea
                 className={classNames(
-                    "rounded-md bg-white outline-none border border-mGray-0 w-full p-[16px] resize-none",
+                    "rounded-md bg-white outline-none border border-mGray-0 w-full p-[12px] resize-none",
                     textareaProps?.className,
                     rest.icon && "pl-[50px]",
                 )}

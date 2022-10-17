@@ -18,7 +18,7 @@ const ResetPassword = () => {
             }
         >
             <div className="mb-[114px]">
-                <Input label={"Username / Email"} className="mb-[34px]" />
+                <Input label={"Username / Email"} className="mb-[14px]" />
                 <Button
                     fullWidth
                     size="xl"

@@ -1,4 +1,6 @@
 import { ContentState, convertFromHTML, EditorState } from "draft-js";
+import { KeyboardEvent } from "react";
+import { ENTER } from "./constants";
 
 export function classNames(...args: any) {
     const classes = [];
@@ -57,4 +59,37 @@ export const convertContentToEditorState = (content?: string) => {
 
 export const getEditorStateInPlainText = (editorState: EditorState) => {
     return editorState.getCurrentContent().getPlainText();
+};
+
+export const removeEmptyKeyValuePairs = (body: object) => {
+    return Object.fromEntries(Object.entries(body).filter(([_, v]) => v != ""));
+};
+
+export const onPressEnter = (
+    e: KeyboardEvent<HTMLInputElement>,
+    callBack: Function,
+) => {
+    if (e.key === ENTER) {
+        callBack();
+    }
+};
+
+export const getCookie = (cookie: string, name: string) => {
+    var nameEQ = name + "=";
+    var ca = cookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+};
+
+export const setCookie = (name: string, value: string) => {
+    document.cookie = `${name}=${value};`;
+};
+
+export const removeCookie = (name: string) => {
+    document.cookie =
+        name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 };

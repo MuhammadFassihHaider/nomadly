@@ -13,3 +13,18 @@ type TSidebarItem = {
 };
 
 type TSetState<T> = React.Dispatch<React.SetStateAction<T>>;
+
+type TSuccessResponse<T = "", U = {}> = {
+    status: "success";
+    token?: string;
+    message: string;
+    // is undefined for logout
+    data: {
+        [T in string]: U;
+    };
+};
+
+type TFailedResponse<T = []> = {
+    status: "error";
+    errors: any[] | T[];
+};

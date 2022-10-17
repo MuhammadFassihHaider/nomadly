@@ -16,6 +16,10 @@ import {
     UseFormSetValue,
     UseFormWatch,
 } from "react-hook-form/dist/types/form";
+import {
+    TPlaygroundInputFieldsEnabled,
+    TPlaygroundSidebarInputFields,
+} from "pages/dashboard/playground";
 
 type Props = {
     onClickSubmitButton: () => void;
@@ -28,11 +32,17 @@ type Props = {
     reset: UseFormReset<TComposeFromPlayground>;
     handleSubmit: UseFormHandleSubmit<TComposeFromPlayground>;
     register: UseFormRegister<TComposeFromPlayground>;
+
+    isInputEnabled: TPlaygroundInputFieldsEnabled;
+    onChangeInputFieldEnabledStatus: (
+        key: keyof TPlaygroundSidebarInputFields,
+    ) => void;
 };
 
 const PlaygroundSidebar = ({
     onClickSubmitButton,
     contentAlreadyGenerated = "",
+
     formState: { errors, isDirty, isValid },
     getValues,
     handleSubmit,
@@ -40,6 +50,9 @@ const PlaygroundSidebar = ({
     reset,
     setValue,
     watch,
+
+    isInputEnabled,
+    onChangeInputFieldEnabledStatus,
 }: Props) => {
     useEffect(() => {
         /*
@@ -74,7 +87,15 @@ const PlaygroundSidebar = ({
         <aside className="w-[340px] bg-mGray-12 p-[38px] min-h-[calc(100vh-60px)] h-[calc(100vh-60px)] fixed left-0 top-[60px] overflow-y-scroll">
             <div className="flex flex-col space-y-[25px]">
                 <PlaygroundInput
-                    label={<PlaygroundInputLabel label="Title" />}
+                    label={
+                        <PlaygroundInputLabel
+                            isChecked={isInputEnabled.title}
+                            onChange={() =>
+                                onChangeInputFieldEnabledStatus("title")
+                            }
+                            label="Title"
+                        />
+                    }
                     {...getCommonFormValues("title")}
                 />
 
@@ -82,23 +103,51 @@ const PlaygroundSidebar = ({
                     label={
                         <PlaygroundInputLabel
                             label={"Content description/brief"}
+                            isChecked={isInputEnabled.description}
+                            onChange={() =>
+                                onChangeInputFieldEnabledStatus("description")
+                            }
                         />
                     }
                     {...getCommonFormValues("description", "textareaProps")}
                 />
 
                 <PlaygroundInput
-                    label={<PlaygroundInputLabel label={"Audience"} />}
+                    label={
+                        <PlaygroundInputLabel
+                            label={"Audience"}
+                            isChecked={isInputEnabled.audience}
+                            onChange={() =>
+                                onChangeInputFieldEnabledStatus("audience")
+                            }
+                        />
+                    }
                     {...getCommonFormValues("audience")}
                 />
 
                 <PlaygroundInput
-                    label={<PlaygroundInputLabel label={"Tone of voice"} />}
+                    label={
+                        <PlaygroundInputLabel
+                            label={"Tone of voice"}
+                            isChecked={isInputEnabled.tone}
+                            onChange={() =>
+                                onChangeInputFieldEnabledStatus("tone")
+                            }
+                        />
+                    }
                     {...getCommonFormValues("tone")}
                 />
 
                 <PlaygroundTextarea
-                    label={<PlaygroundInputLabel label={"Keywords"} />}
+                    label={
+                        <PlaygroundInputLabel
+                            label={"Keywords"}
+                            isChecked={isInputEnabled.keywords}
+                            onChange={() =>
+                                onChangeInputFieldEnabledStatus("keywords")
+                            }
+                        />
+                    }
                     {...getCommonFormValues("keywords", "textareaProps")}
                 />
             </div>

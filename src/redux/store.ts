@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { api } from "./api";
+import { apiGeneral, apiModels } from "./api";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import rootReducer from "./reducers";
 
@@ -10,7 +10,9 @@ const store = configureStore({
         getDefaultMiddleware({
             immutableCheck: { ignoredPaths: ["ui.editorState"] },
             serializableCheck: { ignoredPaths: ["ui.editorState"] },
-        }).concat(api.middleware),
+        })
+            .concat(apiModels.middleware)
+            .concat(apiGeneral.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

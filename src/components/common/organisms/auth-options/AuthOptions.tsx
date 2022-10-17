@@ -4,22 +4,24 @@ import { useState } from "react";
 import { classNames } from "src/utils/helper";
 
 type Props = {
-    options: string[];
+    options: TMenuItem[];
     label?: string;
     containerClassName?: string;
+    onChange: (value: string) => void;
+    selected: string;
 };
 
 const AuthOptions = ({
     options = [],
     label,
     containerClassName = "",
+    onChange,
+    selected,
 }: Props) => {
-    const [selected, setSelected] = useState(options[0]);
-
     return (
         <RadioGroup
             value={selected}
-            onChange={setSelected}
+            onChange={onChange}
             className={containerClassName}
         >
             {label && (
@@ -34,8 +36,8 @@ const AuthOptions = ({
             <div className="bg-white rounded-md grid grid-cols-2 gap-[22px]">
                 {options.map((option) => (
                     <RadioGroup.Option
-                        key={option}
-                        value={option}
+                        key={option.value}
+                        value={option.value}
                         className={({ checked }) =>
                             classNames(
                                 checked
@@ -61,7 +63,7 @@ const AuthOptions = ({
                                             "block text-sm font-medium",
                                         )}
                                     >
-                                        {option}
+                                        {option.label}
                                     </RadioGroup.Label>
                                 </div>
                             </>

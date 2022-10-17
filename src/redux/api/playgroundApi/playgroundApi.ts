@@ -1,18 +1,19 @@
-import { api } from "@redux/api/api.main";
+import { apiModels } from "@redux/api/api.models";
 import {
     TComposeFromPlaygroundOptional,
     TComposeFromPlaygroundRequired,
     TComposeFromPlaygroundResponse,
 } from "@redux/api/playgroundApi/playgroundApi.types";
+import toast from "react-hot-toast";
+import { removeEmptyKeyValuePairs } from "src/utils/helper";
 
-
-const removeEmptyKeyValuePairs = (body: object) => {
-    return Object.fromEntries(Object.entries(body).filter(([_, v]) => v != ""));
-}
-
-const playgroundApi = api.injectEndpoints({
+const playgroundApi = apiModels.injectEndpoints({
     endpoints: (builder) => ({
-        composeFromPlayground: builder.mutation<string, Partial<TComposeFromPlaygroundOptional> & TComposeFromPlaygroundRequired>({
+        composeFromPlayground: builder.mutation<
+            string,
+            Partial<TComposeFromPlaygroundOptional> &
+                TComposeFromPlaygroundRequired
+        >({
             invalidatesTags: ["Playground"],
             query: (body) => {
                 let _body = removeEmptyKeyValuePairs(body);
@@ -28,7 +29,7 @@ const playgroundApi = api.injectEndpoints({
                     // TODO: dispatch and the save the response
                     // api.dispatch(ar)
                 } catch (e) {
-                    // TODO: add error handling
+                    toast.error("An error occured");
                 }
             },
             transformResponse: (response: TComposeFromPlaygroundResponse) => {
@@ -39,6 +40,4 @@ const playgroundApi = api.injectEndpoints({
     overrideExisting: true,
 });
 
-export const {
-    useComposeFromPlaygroundMutation,
-} = playgroundApi;
+export const { useComposeFromPlaygroundMutation } = playgroundApi;
