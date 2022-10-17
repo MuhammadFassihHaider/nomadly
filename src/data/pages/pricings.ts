@@ -1,6 +1,25 @@
-export const Pricings = [
+import { TEBusinessPlan } from "@redux/api/authApi/authApi.types";
+
+type TPricings = {
+    id: TEBusinessPlan;
+    header: {
+        for: string;
+        pricingModule: string;
+    };
+    description: string;
+    pricing: {
+        price: number;
+        per: string;
+    };
+    features: {
+        id: number;
+        feature: string;
+    }[];
+};
+
+export const Pricings: TPricings[] = [
     {
-        id: 0,
+        id: "0",
         header: {
             for: "For individuals",
             pricingModule: "Basic",
@@ -31,7 +50,7 @@ export const Pricings = [
         ],
     },
     {
-        id: 1,
+        id: "1",
         header: {
             for: "For startups",
             pricingModule: "Pro",
@@ -62,7 +81,7 @@ export const Pricings = [
         ],
     },
     {
-        id: 2,
+        id: "2",
         header: {
             for: "For big companies",
             pricingModule: "Enterprise",

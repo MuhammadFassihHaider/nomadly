@@ -4,8 +4,17 @@ import { AuthFooter } from "@components/common/organisms/auth-footer";
 import { PagePaddingsTemplate } from "@components/common/templates/page-paddings-template";
 import { FinishCheckImage } from "@components/pages/finish/finish-check-image";
 import { FinishNotice } from "@components/pages/finish/finish-notice";
+import { useRouter } from "next/router";
+import { useAppSelector } from "@redux/store";
+import { useCreateCompanyMutation } from "@redux/api/authApi/authApi";
 
 const Finish = () => {
+    const router = useRouter();
+
+    const onClickStart = () => {
+        router.push("/dashboard");
+    };
+
     return (
         <PagePaddingsTemplate>
             <Logo />
@@ -15,7 +24,9 @@ const Finish = () => {
                     all set let’s start
                 </p>
                 <FinishNotice />
-                <Button containerClassName="mb-[165px]">Let's Start</Button>
+                <Button containerClassName="mb-[165px]" onClick={onClickStart}>
+                    Let's Start
+                </Button>
                 <AuthFooter />
             </main>
         </PagePaddingsTemplate>

@@ -22,9 +22,7 @@ const AuthHeader = ({ containerClassName = "" }: Props) => {
                     <Button
                         variant="outline"
                         size="lg"
-                        onClick={() =>
-                            router.push("/signup/personal-information")
-                        }
+                        onClick={() => router.push("/create-user")}
                     >
                         Sign Up
                     </Button>

@@ -5,25 +5,25 @@ import { convertContentToEditorState } from "../utils/helper";
 export const useEditorState = (
     content?: string,
 ): {
-    editorState: EditorState,
-    _setEditorStateOnChange: (editorState: EditorState) => void,
-    _setEditorStateFromString: (content: string) => void
+    editorState: EditorState;
+    _setEditorStateOnChange: (editorState: EditorState) => void;
+    _setEditorStateFromString: (content: string) => void;
 } => {
-    const [editorState, setEditorState] = useState<TEditorState>(EditorState.createEmpty());
+    const [editorState, setEditorState] = useState<TEditorState>(
+        convertContentToEditorState(content),
+    );
 
-    const _setEditorStateFromString =
-        (content?: string) => {
-            setEditorState(convertContentToEditorState(content));
-        };
+    const _setEditorStateFromString = (content?: string) => {
+        setEditorState(convertContentToEditorState(content));
+    };
 
-    const _setEditorStateOnChange =
-        (editorState: EditorState) => {
-            setEditorState(editorState);
-        };
+    const _setEditorStateOnChange = (editorState: EditorState) => {
+        setEditorState(editorState);
+    };
 
-    useEffect(() => {
-        _setEditorStateFromString(content);
-    }, [content]);
+    // useEffect(() => {
+    //     _setEditorStateFromString(content);
+    // }, []);
 
     return { editorState, _setEditorStateOnChange, _setEditorStateFromString };
 };

@@ -61,7 +61,6 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps<CreateBlogStepPageProps> = (
     context,
 ) => {
-    console.log({ context: context.params });
     return {
         props: {
             stepByStepGuideSteps: CREATE_BLOG_STEP_BY_STEP,

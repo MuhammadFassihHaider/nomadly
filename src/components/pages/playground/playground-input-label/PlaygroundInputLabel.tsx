@@ -5,6 +5,8 @@ import { twMerge } from "tailwind-merge";
 export type TPlaygroundTemplateInputLabelProps = {
     label: string;
     hasError?: boolean;
+    onChange: () => void;
+    isChecked: boolean;
 };
 
 // TODO: add hint
@@ -12,6 +14,8 @@ export type TPlaygroundTemplateInputLabelProps = {
 const PlaygroundInputLabel = ({
     label,
     hasError = false,
+    onChange,
+    isChecked,
 }: TPlaygroundTemplateInputLabelProps) => {
     return (
         <div className="flex items-center justify-between mb-[4px]">
@@ -29,10 +33,8 @@ const PlaygroundInputLabel = ({
                 </span>
             </div>
             <Switch
-                checked
-                onChange={() => {
-                    // do something
-                }}
+                checked={isChecked}
+                onChange={onChange}
                 size="sm"
                 containerClassName={"mr-1"}
             />

@@ -22,7 +22,7 @@ const AuthTemplate = ({
     children,
 }: AuthTemplateProps) => {
     return (
-        <div className="flex">
+        <div className="flex h-full">
             <PagePaddingsTemplate top="small">
                 <AuthHeader />
                 <div

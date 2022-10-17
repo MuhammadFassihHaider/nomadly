@@ -18,13 +18,15 @@ const Input = (props: TInputProps) => {
             <input
                 {...inputProps}
                 className={twMerge(
-                    "rounded-md bg-white outline-none border border-mGray-0 w-full p-[16px]",
-                    props?.className,
-                    inputProps?.className,
+                    "rounded-md bg-white outline-none border border-mGray-0 w-full p-[12px]",
+                    inputProps?.className ?? props?.className,
                     rest.icon && "pl-[50px]",
                     !!props.errorMessage && "border-red-500",
                 )}
             />
+            <p className="text-xs ml-1 text-red-500 capitalize min-h-[20px]">
+                {rest.errorMessage}
+            </p>
         </InputAndTextareaWrapper>
     );
 };
