@@ -36,7 +36,7 @@ const Dropdown = ({
                         )}
                     >
                         {placeholder ?? "Select..."}
-                        <DownArrow className="absolute right-[12px] top-1/2 transform translate-y-[-1/2]" />
+                        <DownArrow className="absolute right-[12px] top-1/2 transform translate-y-[-1/2] fill-black w-[13px] h-[8px]" />
                     </Menu.Button>
                     <Menu.Items
                         className={classNames(

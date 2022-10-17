@@ -5,6 +5,15 @@ import { GoogleButton } from "@components/common/molecules/google-button";
 import { AuthTemplate } from "@components/common/templates/auth-template";
 import React from "react";
 
+function TestComponent() {
+    return (
+        <div className="grid grid-cols-2 gap-[30px] mb-[32px]">
+            <Input label={"First Name"} />
+            <Input label={"Last Name"} />
+        </div>
+    );
+}
+
 const PersonalInformation = () => {
     return (
         <AuthTemplate
@@ -14,10 +23,7 @@ const PersonalInformation = () => {
             <div className="mb-[41px]">
                 <GoogleButton brandType="google" className="mb-[44px]" />
                 <Divider text="Or" containerClassName="mb-[44px]" />
-                <div className="grid grid-cols-2 gap-[30px] mb-[32px]">
-                    <Input label={"First Name"} />
-                    <Input label={"Last Name"} />
-                </div>
+                <TestComponent />
                 <Input label={"Email"} />
             </div>
             <Button fullWidth containerClassName="mb-[70px]">

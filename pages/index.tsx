@@ -14,8 +14,11 @@ const Home = () => {
             <div className="mb-[68px]">
                 <GoogleButton brandType="google" className="mb-[44px]" />
                 <Divider text="Or" containerClassName="mb-[44px]" />
-                <Input label={"Username / Email"} className="mb-[34px]" />
-                <Input label={"Password"} className="mb-1" />
+                <Input
+                    label={"Username / Email"}
+                    inputProps={{ className: "mb-[34px]" }}
+                />
+                <Input label={"Password"} inputProps={{ className: "mb-1" }} />
                 <LinkWrapper
                     href={"/reset-password"}
                     containerClassName="text-sm leading-[22px] text-primary hover:underline cursor-pointer mb-[36px]"

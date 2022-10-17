@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
+import { api } from "./api";
+import ui from "@redux/slices/ui-slice";
 
-import counter from "@redux/slices/counter";
-
-const rootReducer = combineReducers({ counter });
+const rootReducer = combineReducers({ ui, [api.reducerPath]: api.reducer });
 
 export type RootState = ReturnType<typeof rootReducer>;
 

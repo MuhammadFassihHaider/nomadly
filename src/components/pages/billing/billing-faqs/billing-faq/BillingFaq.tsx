@@ -1,11 +1,11 @@
 import { Dropdown } from "@components/common/atoms/dropdown";
 import React from "react";
-import { BillingFAQs } from "src/data/billing-faqs";
+import { BILLING_FAQS } from "src/data/pages/billing-faqs";
 
 const BillingFaq = () => {
     return (
         <div className="flex flex-col space-y-[32px]">
-            {BillingFAQs.map((faq) => (
+            {BILLING_FAQS.map((faq) => (
                 <Dropdown
                     items={[]}
                     key={faq}

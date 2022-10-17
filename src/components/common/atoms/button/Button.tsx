@@ -1,8 +1,7 @@
-import React from "react";
-import { ComponentProps } from "react";
+import React, { ComponentProps } from "react";
 import { classNames } from "src/utils/helper";
 
-const CommonStyles = `inline-flex items-center justify-center border border-transparent font-medium shadow-sm capitalize tracking-wider text-center transition-all duration-300`;
+const CommonStyles = `inline-flex items-center justify-center border border-transparent font-medium shadow-sm capitalize tracking-wider text-center transition-all duration-300 min-w-max`;
 
 type TSize = "xs" | "sm" | "base" | "lg" | "xl";
 type TVariant = "primary" | "outline" | "grey" | "gray";
@@ -18,54 +17,55 @@ export type ButtonProps = {
     iconRight?: JSX.Element;
 } & ComponentProps<"button">;
 
-const Button = ({
-    size = "xl",
-    variant = "primary",
-    children,
-    className = "",
-    // loading = false,
-    containerClassName = "",
-    fullWidth = false,
-    iconLeft,
-    iconRight,
-    ...rest
-}: ButtonProps): JSX.Element => {
+const Button = (
+    {
+        size = "xl",
+        variant = "primary",
+        children,
+        className = "",
+        // loading = false,
+        containerClassName = "",
+        fullWidth = false,
+        iconLeft,
+        iconRight,
+        ...rest
+    }: ButtonProps): JSX.Element => {
     return (
         <div
-            className={classNames(
+            className={ classNames(
                 "flex items-center justify-center gap-2",
                 containerClassName,
-            )}
+            ) }
         >
             <button
                 type="button"
-                className={classNames(
+                className={ classNames(
                     rest.disabled ? `opacity-50 cursor-not-allowed` : "",
                     fullWidth ? "w-full" : "",
                     getSizeStyles(size),
                     getVariantStyles(variant),
                     CommonStyles,
                     className,
-                )}
+                ) }
                 onClick={
                     rest.disabled
                         ? () => {
-                              return;
-                          }
+                            return;
+                        }
                         : rest.onClick
                 }
-                {...rest}
+                { ...rest }
             >
-                <span className="mr-[15px]">{iconLeft}</span>
-                {children}
-                <span className="ml-[15px]">{iconRight}</span>
+                <span className="mr-[15px]">{ iconLeft }</span>
+                { children }
+                <span className="ml-[15px]">{ iconRight }</span>
                 {/* {loading && (
                     <span className="ml-3">
                         <Loader
                             style={{ fill: "#007FFF", height: 12, width: 12 }}
                         />
                     </span>
-                )} */}
+                )} */ }
             </button>
         </div>
     );

@@ -13,6 +13,12 @@ module.exports = {
                 "mGray-4": "#7C889B",
                 "mGray-5": "#6F6C90",
                 "mGray-6": "#F3F3F3",
+                "mGray-7": "#C8CDD6",
+                "mGray-8": "#6D7787",
+                "mGray-9": "#87888C",
+                "mGray-10": "#D9D9D9",
+                "mGray-11": "#BFBFBF",
+                "mGray-12": "#F6F6F6",
                 gmail: "#EA4335",
                 mLightBlue: "#BFD1FF",
                 "mBlack-0": "#101625",
@@ -24,5 +30,5 @@ module.exports = {
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/line-clamp")],
 };

@@ -1,5 +1,5 @@
 import { Divider } from "@components/common/atoms/divider";
-import { SidebarData } from "../../../../data/auth-sidebar-content";
+import { SidebarData } from "../../../../data/common/auth-sidebar-content";
 import { AuthSidebarPositionedItems } from "./auth-sidebar-positioned-items";
 import { AuthSidebarRow } from "./AuthSidebarRow";
 

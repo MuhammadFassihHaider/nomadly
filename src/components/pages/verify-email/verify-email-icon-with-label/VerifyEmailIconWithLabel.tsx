@@ -1,6 +1,3 @@
-import { Refresh } from "@components/icons";
-import React from "react";
-
 type Props = {
     label: string;
     icon: JSX.Element;
