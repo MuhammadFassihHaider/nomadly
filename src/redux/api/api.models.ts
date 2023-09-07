@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "https://nomadly-ai.herokuapp.com/api/v1/";
-const X_API_KEY = "823b0e41-a37e-4725-badb-1bcc043fbd63";
+const BASE_URL = "";
+const X_API_KEY = ""
 export const apiModels = createApi({
     reducerPath: "api_models",
     endpoints: () => ({}),
